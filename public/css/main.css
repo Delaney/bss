@@ -413,6 +413,53 @@ template {
 	display: none !important;
 }
 
+/****************************
+ *
+ * START: BSS CUSTOM STYLES
+ *
+ ****************************/
+
+.gap, .gap-1, .gap-2, .gap-3, .gap-4, .gap-5 {
+	display: block;
+}
+
+.gap {
+	height: 5px;
+}
+
+.gap-1 {
+	height: 10px;
+}
+
+.gap-2 {
+	height: 20px;
+}
+
+.gap-3 {
+	height: 30px;
+}
+
+.gap-4 {
+	height: 40px;
+}
+
+.gap-5 {
+	height: 50px;
+}
+
+.btn-bss {
+	color: #fff;
+	background-color: #c02526;
+	border-color: #c02526;
+}
+
+/****************************
+ *
+ * END: BSS CUSTOM STYLES
+ *
+ ****************************/
+
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-bottom: 0.5rem;
@@ -15783,7 +15830,7 @@ body.menu-side-right .layout-w {
 
 .element-wrapper .element-header:after {
 	content: "";
-	background-color: #047bf8;
+	background-color: #c02526;
 	width: 25px;
 	height: 4px;
 	border-radius: 0px;
@@ -16063,7 +16110,12 @@ a.el-tablo .label {
 	transition: all 0.25s ease;
 }
 
+a.el-tablo .home-box-label {
+	letter-spacing: 1px;
+}
+
 a.el-tablo:hover {
+	text-decoration: none;
 	-webkit-transform: translateY(-5px) scale(1.02);
 					transform: translateY(-5px) scale(1.02);
 	-webkit-box-shadow: 0px 5px 12px rgba(126, 142, 177, 0.2);
@@ -16078,6 +16130,11 @@ a.el-tablo:hover .value {
 
 a.el-tablo:hover .label {
 	color: #3395fc;
+}
+
+a.el-tablo:hover .home-box-label {
+	-webkit-transform: translateY(-3px);
+					transform: translateY(-3px);
 }
 
 a.el-tablo:hover.centered .value {
@@ -17453,7 +17510,7 @@ a.el-tablo:hover .label {
 }
 
 .element-balances .balance.balance-v2 .balance-title {
-	color: #047bf8;
+	color: #c02526;
 }
 
 .element-balances .balance.balance-v2 .balance-value {
@@ -17706,9 +17763,9 @@ a.el-tablo:hover .label {
 
 .fancy-progress-with-label .fpl-progress-w .fpl-progress-i {
 	height: 20px;
-	background-color: #28EF58;
-	background-image: -webkit-gradient(linear, left top, right top, from(#28EF58), color-stop(98%, #3386EF));
-	background-image: linear-gradient(-270deg, #28EF58 0%, #3386EF 98%);
+	background-color: #c02526;
+	background-image: -webkit-gradient(linear, left top, right top, from(#c02526), color-stop(98%, #2f0a0a));
+	background-image: linear-gradient(-270deg, #c02526 0%, #2f0a0a 98%);
 	border-radius: 20px;
 }
 
@@ -22879,7 +22936,7 @@ TODO Application
 }
 
 .fancy-selector-w .fancy-selector-options {
-	background-color: #1456dc;
+	background-color: #901d1d;
 	position: absolute;
 	left: 0px;
 	min-width: 100%;
@@ -26960,8 +27017,8 @@ body.color-scheme-dark .profile-tile .profile-tile-box, .content-panel.color-sch
 }
 
 body.color-scheme-dark, .content-panel.color-scheme-dark {
-	background-color: #293145;
-	color: #ccd9e8;
+	background-color: #202020;
+	color: #fff;
 }
 
 body.color-scheme-dark .post-box .post-text, .content-panel.color-scheme-dark .post-box .post-text {
@@ -26981,7 +27038,7 @@ body.color-scheme-dark .centered-load-more-link span, .content-panel.color-schem
 }
 
 body.color-scheme-dark .element-wrapper .element-actions .element-action, .content-panel.color-scheme-dark .element-wrapper .element-actions .element-action {
-	color: #6C739C;
+	color: #fff;
 }
 
 body.color-scheme-dark .element-wrapper .element-actions .element-action:hover, .content-panel.color-scheme-dark .element-wrapper .element-actions .element-action:hover {

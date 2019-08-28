@@ -63,12 +63,12 @@ class App extends Component {
 					<div className="menu-mobile menu-activated-on-click color-scheme-dark">
 						<div className="mm-logo-buttons-w">
 							<a className="mm-logo" href="index.html">
-								<img src="img/logo.png" alt=""/>
-								<span>Clean Admin</span>
-								</a>
+								<img src="img/premier-bet-logo-small.png" alt=""/>
+							</a>
 							<div className="mm-buttons">
 								<div className="content-panel-open">
-									<div className="os-icon os-icon-grid-circles"></div>
+									{/* <div className="os-icon os-icon-grid-circles"></div> */}
+									<img src="img/premier-bet-logo-small.png" alt=""/>
 								</div>
 								<div className="mobile-menu-trigger">
 									<div className="os-icon os-icon-hamburger-menu-1"></div>
@@ -265,42 +265,6 @@ class App extends Component {
 								<li className="has-sub-menu">
 									<a href="# ">
 										<div className="icon-w">
-											<div className="os-icon os-icon-life-buoy"></div>
-										</div>
-										<span>UI Kit</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="uikit_modals.html">Modals <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="uikit_alerts.html">Alerts</a>
-										</li>
-										<li>
-											<a href="uikit_grid.html">Grid</a>
-										</li>
-										<li>
-											<a href="uikit_progress.html">Progress</a>
-										</li>
-										<li>
-											<a href="uikit_popovers.html">Popover</a>
-										</li>
-										<li>
-											<a href="uikit_tooltips.html">Tooltips</a>
-										</li>
-										<li>
-											<a href="uikit_buttons.html">Buttons</a>
-										</li>
-										<li>
-											<a href="uikit_dropdowns.html">Dropdowns</a>
-										</li>
-										<li>
-											<a href="uikit_typography.html">Typography</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
 											<div className="os-icon os-icon-mail"></div>
 										</div>
 										<span>Emails</span></a>
@@ -337,105 +301,6 @@ class App extends Component {
 										</li>
 									</ul>
 								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
-											<div className="os-icon os-icon-edit-32"></div>
-										</div>
-										<span>Forms</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="forms_regular.html">Regular Forms</a>
-										</li>
-										<li>
-											<a href="forms_validation.html">Form Validation</a>
-										</li>
-										<li>
-											<a href="forms_wizard.html">Form Wizard</a>
-										</li>
-										<li>
-											<a href="forms_uploads.html">File Uploads</a>
-										</li>
-										<li>
-											<a href="forms_wisiwig.html">Wisiwig Editor</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
-											<div className="os-icon os-icon-grid"></div>
-										</div>
-										<span>Tables</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="tables_regular.html">Regular Tables</a>
-										</li>
-										<li>
-											<a href="tables_datatables.html">Data Tables</a>
-										</li>
-										<li>
-											<a href="tables_editable.html">Editable Tables</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
-											<div className="os-icon os-icon-zap"></div>
-										</div>
-										<span>Icons</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_feather.html">Feather Icons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_themefy.html">Themefy Icons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_picons_thin.html">Picons Thin</a>
-										</li>
-										<li>
-											<a href="icon_fonts_dripicons.html">Dripicons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_eightyshades.html">Eightyshades</a>
-										</li>
-										<li>
-											<a href="icon_fonts_entypo.html">Entypo</a>
-										</li>
-										<li>
-											<a href="icon_fonts_font_awesome.html">Font Awesome</a>
-										</li>
-										<li>
-											<a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a>
-										</li>
-										<li>
-											<a href="icon_fonts_metrize_icons.html">Metrize Icons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_picons_social.html">Picons Social</a>
-										</li>
-										<li>
-											<a href="icon_fonts_batch_icons.html">Batch Icons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_dashicons.html">Dashicons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_typicons.html">Typicons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_weather_icons.html">Weather Icons</a>
-										</li>
-										<li>
-											<a href="icon_fonts_light_admin.html">Light Admin</a>
-										</li>
-									</ul>
-								</li>
 							</ul>
 							{/* <!--------------------
 							END - Mobile Menu List
@@ -464,10 +329,11 @@ class App extends Component {
 					<div className="menu-w menu-activated-on-hover menu-has-selected-link selected-menu-color-light color-scheme-dark color-style-default sub-menu-color-dark menu-position-side menu-side-left menu-layout-mini sub-menu-style-over">
 						<div className="logo-w">
 							<a className="logo" href="index.html">
-								<div className="logo-element"></div>
+								{/* <div className="logo-element"></div>
 								<div className="logo-label">
 									Clean Admin
-								</div>
+								</div> */}
+								<img src="img/premier-bet-logo-small.png" alt=""/>
 							</a>
 						</div>
 						<div className="logged-user-w avatar-inline">
@@ -750,7 +616,8 @@ class App extends Component {
 									<div className="icon-w">
 										<div className="os-icon os-icon-life-buoy"></div>
 									</div>
-									<span>UI Kit</span></a>
+									<span>UI Kit</span>
+								</a>
 								<div className="sub-menu-w">
 									<div className="sub-menu-header">
 										UI Kit
@@ -792,199 +659,6 @@ class App extends Component {
 									</div>
 								</div>
 							</li>
-							<li className="sub-header">
-								<span>Elements</span>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-mail"></div>
-									</div>
-									<span>Emails</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Emails
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-mail"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="emails_welcome.html">Welcome Email</a>
-											</li>
-											<li>
-												<a href="emails_order.html">Order Confirmation</a>
-											</li>
-											<li>
-												<a href="emails_payment_due.html">Payment Due</a>
-											</li>
-											<li>
-												<a href="emails_forgot.html">Forgot Password</a>
-											</li>
-											<li>
-												<a href="emails_activate.html">Activate Account</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-users"></div>
-									</div>
-									<span>Users</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Users
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-users"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="users_profile_big.html">Big Profile</a>
-											</li>
-											<li>
-												<a href="users_profile_small.html">Compact Profile</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-edit-32"></div>
-									</div>
-									<span>Forms</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Forms
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-edit-32"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="forms_regular.html">Regular Forms</a>
-											</li>
-											<li>
-												<a href="forms_validation.html">Form Validation</a>
-											</li>
-											<li>
-												<a href="forms_wizard.html">Form Wizard</a>
-											</li>
-											<li>
-												<a href="forms_uploads.html">File Uploads</a>
-											</li>
-											<li>
-												<a href="forms_wisiwig.html">Wisiwig Editor</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-grid"></div>
-									</div>
-									<span>Tables</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Tables
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-grid"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="tables_regular.html">Regular Tables</a>
-											</li>
-											<li>
-												<a href="tables_datatables.html">Data Tables</a>
-											</li>
-											<li>
-												<a href="tables_editable.html">Editable Tables</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-zap"></div>
-									</div>
-									<span>Icons</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Icons
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-zap"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_feather.html">Feather Icons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_themefy.html">Themefy Icons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_picons_thin.html">Picons Thin</a>
-											</li>
-											<li>
-												<a href="icon_fonts_dripicons.html">Dripicons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_eightyshades.html">Eightyshades</a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="icon_fonts_entypo.html">Entypo</a>
-											</li>
-											<li>
-												<a href="icon_fonts_font_awesome.html">Font Awesome</a>
-											</li>
-											<li>
-												<a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a>
-											</li>
-											<li>
-												<a href="icon_fonts_metrize_icons.html">Metrize Icons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_picons_social.html">Picons Social</a>
-											</li>
-											<li>
-												<a href="icon_fonts_batch_icons.html">Batch Icons</a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="icon_fonts_dashicons.html">Dashicons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_typicons.html">Typicons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_weather_icons.html">Weather Icons</a>
-											</li>
-											<li>
-												<a href="icon_fonts_light_admin.html">Light Admin</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
 						</ul>
 						<div className="side-menu-magic">
 							<h4>
@@ -1015,10 +689,10 @@ class App extends Component {
 									</div>
 									<div className="fs-main-info">
 										<div className="fs-name">
-											<span>Bitcoin Portfolio</span><strong>BTC</strong>
+											<span>Providus</span><strong>BTC</strong>
 										</div>
 										<div className="fs-sub">
-											<span>Balance:</span><strong>$5,304</strong>
+											<span>Wallet Balance:</span><strong>$5,304</strong>
 										</div>
 									</div>
 									<div className="fs-selector-trigger">
@@ -1035,7 +709,7 @@ class App extends Component {
 												<span>Lite Portfolio</span><strong>ETH</strong>
 											</div>
 											<div className="fs-sub">
-												<span>Balance:</span><strong>$5,304</strong>
+												<span>Wallet Balance:</span><strong>$5,304</strong>
 											</div>
 										</div>
 									</div>
@@ -1048,7 +722,7 @@ class App extends Component {
 												<span>Bitcoin Portfolio</span><strong>BTC</strong>
 											</div>
 											<div className="fs-sub">
-												<span>Balance:</span><strong>$8,274</strong>
+												<span>Wallet Balance:</span><strong>$8,274</strong>
 											</div>
 										</div>
 									</div>
@@ -1079,84 +753,6 @@ class App extends Component {
 								<div className="element-search autosuggest-search-activator">
 									<input placeholder="Start typing to search..." type="text"/>
 								</div>
-
-								{/* <!--------------------
-								START - Messages Link in secondary top menu
-								--------------------> */}
-
-								<div className="messages-notifications os-dropdown-trigger os-dropdown-position-left">
-									<i className="os-icon os-icon-mail-14"></i>
-									<div className="new-messages-count">
-										12
-									</div>
-									<div className="os-dropdown light message-list">
-										<ul>
-											<li>
-												<a href="# ">
-													<div className="user-avatar-w">
-														<img alt="" src="img/avatar1.jpg"/>
-													</div>
-													<div className="message-content">
-														<h6 className="message-from">
-															John Mayers
-														</h6>
-														<h6 className="message-title">
-															Account Update
-														</h6>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a href="# ">
-													<div className="user-avatar-w">
-														<img alt="" src="img/avatar2.jpg"/>
-													</div>
-													<div className="message-content">
-														<h6 className="message-from">
-															Phil Jones
-														</h6>
-														<h6 className="message-title">
-															Secutiry Updates
-														</h6>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a href="# ">
-													<div className="user-avatar-w">
-														<img alt="" src="img/avatar3.jpg"/>
-													</div>
-													<div className="message-content">
-														<h6 className="message-from">
-															Bekky Simpson
-														</h6>
-														<h6 className="message-title">
-															Vacation Rentals
-														</h6>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a href="# ">
-													<div className="user-avatar-w">
-														<img alt="" src="img/avatar4.jpg"/>
-													</div>
-													<div className="message-content">
-														<h6 className="message-from">
-															Alice Priskon
-														</h6>
-														<h6 className="message-title">
-															Payment Confirmation
-														</h6>
-													</div>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								{/* <!--------------------
-								END - Messages Link in secondary top menu
-								--------------------> */}
 								
 								{/* <!--------------------
 								START - Settings Link in secondary top menu
@@ -1275,11 +871,14 @@ class App extends Component {
 								</div>
 
 								{/* <!--------------------
-								React Router Base
+								START - React Router Base
 								-------------------->*/}
 								<Switch>
 									<Route exact path="/" component={Dashboard} />
 								</Switch>
+								{/* <!--------------------
+								END - React Router Base
+								-------------------->*/}
 
 
 
@@ -1296,9 +895,9 @@ class App extends Component {
 									<div className="element-actions actions-only">
 										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-minus-circle"></i></a>
 									</div>
-									<h6 className="element-header">
-										Quick Conversion
-									</h6>
+									<h5 className="element-header">
+										Pay to Baba Ijebu
+									</h5>
 									<div className="element-box-tp">
 										<form action="">
 											<div className="row">
@@ -1376,9 +975,9 @@ class App extends Component {
 									<div className="element-actions actions-only">
 										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-minus-circle"></i></a>
 									</div>
-									<h6 className="element-header">
-										Order History
-									</h6>
+									<h5 className="element-header">
+										Transaction History
+									</h5>
 									<div className="element-box-tp">
 										<table className="table table-compact smaller text-faded mb-0">
 											<thead>
@@ -1519,10 +1118,11 @@ class App extends Component {
 									<div className="element-actions actions-only">
 										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-minus-circle"></i></a>
 									</div>
-									<h6 className="element-header">
-										Profile Completion
-									</h6>
+									<h5 className="element-header">
+										Bonus Completion
+									</h5>
 									<div className="element-box-tp">
+										<h6>Sports Bet</h6>
 										<div className="fancy-progress-with-label">
 											<div className="fpl-label">
 												65%
@@ -1531,61 +1131,25 @@ class App extends Component {
 												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
 											</div>
 										</div>
-										<div className="todo-list">
-											<a className="todo-item complete" href="# ">
-												<div className="ti-info">
-													<div className="ti-header">
-														Connect Bank Account
-													</div>
-													<div className="ti-sub-header">
-														You have connected 2 accounts
-													</div>
-												</div>
-												<div className="ti-icon">
-													<i className="os-icon os-icon-check"></i>
-												</div>
-											</a><a className="todo-item complete" href="# ">
-												<div className="ti-info">
-													<div className="ti-header">
-														Upload Tax Documents
-													</div>
-													<div className="ti-sub-header">
-														You uploaded W-2 and 1099
-													</div>
-												</div>
-												<div className="ti-icon">
-													<i className="os-icon os-icon-check"></i>
-												</div>
-											</a><a className="todo-item" href="# ">
-												<div className="ti-info">
-													<div className="ti-header">
-														Deposit Money
-													</div>
-													<div className="ti-sub-header">
-														You can deposit from your bank
-													</div>
-												</div>
-												<div className="ti-icon">
-													<i className="os-icon os-icon-arrow-right7"></i>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div className="d-xxl-none">
-									<div className="cta-w orange text-center">
-										<div className="cta-content extra-padded">
-											<div className="highlight-header">
-												Bonus
+
+										<h6>Daily Sales</h6>
+										<div className="fancy-progress-with-label">
+											<div className="fpl-label">
+												24%
 											</div>
-											<h5 className="cta-header">
-												Invite your friends and make money with referrals
-											</h5>
-											<form action="">
-												<div className="newsletter-field-w">
-													<input placeholder="Email address..." type="text"/><button className="btn btn-sm btn-primary">Send</button>
-												</div>
-											</form>
+											<div className="fpl-progress-w">
+												<div className="fpl-progress-i" style={{ width: '24%' }}></div>
+											</div>
+										</div>
+
+										<h6>Lotto Bonus</h6>
+										<div className="fancy-progress-with-label">
+											<div className="fpl-label">
+												92%
+											</div>
+											<div className="fpl-progress-w">
+												<div className="fpl-progress-i" style={{ width: '92%' }}></div>
+											</div>
 										</div>
 									</div>
 								</div>
