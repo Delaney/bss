@@ -453,6 +453,22 @@ template {
 	border-color: #c02526;
 }
 
+.w-100 {
+	width: 100%;
+}
+
+.bonus-table {
+	font-size: 20px;
+}
+
+.bonus-table .fancy-progress-with-label {
+	margin-bottom: 0;
+}
+
+.bonus-table .fpl-progress-w {
+	width: 100px;
+}
+
 /****************************
  *
  * END: BSS CUSTOM STYLES

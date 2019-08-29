@@ -3,8 +3,6 @@ import { Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
 import Dashboard from './pages/Dashboard'
-// import SecondPage from './pages/SecondPage'
-// import ThirdPage from './pages/ThirdPage'
 // import './App.css'
 
 // class App extends Component {
@@ -37,11 +35,6 @@ import Dashboard from './pages/Dashboard'
 // 						</div>
 // 					))}
 // 				</div>
-// 				<Switch>
-// 					<Route exact path="/" component={HomePage} />
-// 					<Route path="/second" component={SecondPage} />
-// 					<Route path="/third" component={ThirdPage} />
-// 				</Switch>
 // 			</div>
 // 		)
 // 	}
@@ -67,8 +60,8 @@ class App extends Component {
 							</a>
 							<div className="mm-buttons">
 								<div className="content-panel-open">
-									{/* <div className="os-icon os-icon-grid-circles"></div> */}
-									<img src="img/premier-bet-logo-small.png" alt=""/>
+									<div className="os-icon os-icon-grid-circles"></div>
+									{/* <img src="img/premier-bet-logo-small.png" alt=""/> */}
 								</div>
 								<div className="mobile-menu-trigger">
 									<div className="os-icon os-icon-hamburger-menu-1"></div>
@@ -323,7 +316,7 @@ class App extends Component {
 					END - Mobile Menu
 					--------------------> */}
 					
-					{/* <!--------------------
+					{/* <!--------------------@
 					START - Main Menu
 					--------------------> */}
 					<div className="menu-w menu-activated-on-hover menu-has-selected-link selected-menu-color-light color-scheme-dark color-style-default sub-menu-color-dark menu-position-side menu-side-left menu-layout-mini sub-menu-style-over">
@@ -692,7 +685,7 @@ class App extends Component {
 											<span>Providus</span><strong>BTC</strong>
 										</div>
 										<div className="fs-sub">
-											<span>Wallet Balance:</span><strong>$5,304</strong>
+											<span>Wallet Balance:</span><strong>₦5,304</strong>
 										</div>
 									</div>
 									<div className="fs-selector-trigger">
@@ -709,7 +702,7 @@ class App extends Component {
 												<span>Lite Portfolio</span><strong>ETH</strong>
 											</div>
 											<div className="fs-sub">
-												<span>Wallet Balance:</span><strong>$5,304</strong>
+												<span>Wallet Balance:</span><strong>₦5,304</strong>
 											</div>
 										</div>
 									</div>
@@ -722,7 +715,7 @@ class App extends Component {
 												<span>Bitcoin Portfolio</span><strong>BTC</strong>
 											</div>
 											<div className="fs-sub">
-												<span>Wallet Balance:</span><strong>$8,274</strong>
+												<span>Wallet Balance:</span><strong>₦8,274</strong>
 											</div>
 										</div>
 									</div>
@@ -735,7 +728,7 @@ class App extends Component {
 												<span>Ripple Portfolio</span><strong>RPX</strong>
 											</div>
 											<div className="fs-sub">
-												<span>Balance:</span><strong>$1,202</strong>
+												<span>Wallet Balance:</span><strong>₦1,202</strong>
 											</div>
 										</div>
 									</div>
@@ -847,29 +840,7 @@ class App extends Component {
 						</div>
 						<div className="content-i">
 							<div className="content-box">
-								<div className="os-tabs-w">
-									<div className="os-tabs-controls os-tabs-complex">
-										<ul className="nav nav-tabs">
-											<li className="nav-item">
-												<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#tab_overview">
-													<span className="tab-label">Debt Overview</span>
-												</a>
-											</li>
-											<li className="nav-item">
-												<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#tab_sales">
-													<span className="tab-label">Cashier Debt</span>
-													<span className="tab-value">₦7,839.23</span>
-												</a>
-											</li>
-											<li className="nav-item">
-												<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#tab_sales">
-													<span className="tab-label">Bonuses</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-
+								
 								{/* <!--------------------
 								START - React Router Base
 								-------------------->*/}
@@ -880,8 +851,6 @@ class App extends Component {
 								END - React Router Base
 								-------------------->*/}
 
-
-
 							</div>
 
 							{/* <!--------------------
@@ -891,19 +860,20 @@ class App extends Component {
 								<div className="content-panel-close">
 									<i className="os-icon os-icon-close"></i>
 								</div>
-								<div className="element-wrapper">
+
+								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-minus-circle"></i></a>
+										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
 									</div>
 									<h5 className="element-header">
 										Pay to Baba Ijebu
 									</h5>
-									<div className="element-box-tp">
+									<div className="element-box-tp" style={{display: 'none'}}>
 										<form action="">
 											<div className="row">
 												<div className="col-6">
 													<div className="form-group">
-														<label for="">From</label>
+														<label htmlFor="">From</label>
 														<select className="form-control">
 															<option>
 																Bitcoins
@@ -922,7 +892,7 @@ class App extends Component {
 												</div>
 												<div className="col-6">
 													<div className="form-group">
-														<label for="">To</label><select className="form-control">
+														<label htmlFor="">To</label><select className="form-control">
 															<option>
 																USD
 															</option>
@@ -942,9 +912,9 @@ class App extends Component {
 											<div className="row">
 												<div className="col-6">
 													<div className="form-group">
-														<label for="">Amount</label>
+														<label htmlFor="">Amount</label>
 														<div className="input-group">
-															<input className="form-control" placeholder="Amount..." type="text" value="1.37"/>
+															<input className="form-control" placeholder="Amount..." type="text" defaultValue="1.37"/>
 															<div className="input-group-append">
 																<div className="input-group-text">
 																	BTC
@@ -955,9 +925,9 @@ class App extends Component {
 												</div>
 												<div className="col-6">
 													<div className="form-group">
-														<label for="">Price per BTC</label>
+														<label htmlFor="">Price per BTC</label>
 														<div className="input-group">
-															<input className="form-control" type="text" value="8,284"/>
+															<input className="form-control" type="text" defaultValue="8,284"/>
 															<div className="input-group-append">
 																<div className="input-group-text">
 																	USD
@@ -971,14 +941,14 @@ class App extends Component {
 										</form>
 									</div>
 								</div>
-								<div className="element-wrapper compact">
+								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-minus-circle"></i></a>
+										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
 									</div>
 									<h5 className="element-header">
 										Transaction History
 									</h5>
-									<div className="element-box-tp">
+									<div className="element-box-tp" style={{display: 'none'}}>
 										<table className="table table-compact smaller text-faded mb-0">
 											<thead>
 												<tr>
@@ -1114,14 +1084,14 @@ class App extends Component {
 										<a className="centered-load-more-link smaller" href="# "><span>Load More Transactions</span></a>
 									</div>
 								</div>
-								<div className="element-wrapper compact">
+								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-minus-circle"></i></a>
+										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
 									</div>
 									<h5 className="element-header">
 										Bonus Completion
 									</h5>
-									<div className="element-box-tp">
+									<div className="element-box-tp" style={{display: 'none'}}>
 										<h6>Sports Bet</h6>
 										<div className="fancy-progress-with-label">
 											<div className="fpl-label">
