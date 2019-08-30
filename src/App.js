@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
 import Dashboard from './pages/Dashboard'
@@ -733,7 +733,7 @@ class App extends Component {
 										</div>
 									</div>
 									<div className="fancy-selector-actions text-right">
-										<a className="btn btn-primary" href="# "><i className="os-icon os-icon-ui-22"></i><span>Add Account</span></a>
+										<a className="btn btn-dark" href="# "><i className="os-icon os-icon-ui-22"></i><span>Add Account</span></a>
 									</div>
 								</div>
 							</div>
@@ -844,9 +844,11 @@ class App extends Component {
 								{/* <!--------------------
 								START - React Router Base
 								-------------------->*/}
-								<Switch>
-									<Route exact path="/" component={Dashboard} />
-								</Switch>
+								<BrowserRouter>
+									<Switch>
+										<Route exact path="/" component={Dashboard} />
+									</Switch>
+								</BrowserRouter>
 								{/* <!--------------------
 								END - React Router Base
 								-------------------->*/}

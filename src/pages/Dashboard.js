@@ -33,9 +33,8 @@ class Dashboard extends Component {
 						START - Overview Tab
 						--------------------> */}
 						<div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-							<div className="row">
+							{/* <div className="row">
 								<div className="col-sm-12 col-lg-12 col-xxl-12">
-									{/* <div className="element-balances justify-content-between mobile-full-width"> */}
 									<div className="element-balances text-center mobile-full-width">
 										<div className="balance balance-v2">
 											<div className="balance-title">
@@ -56,11 +55,6 @@ class Dashboard extends Component {
 										</div>
 									</div>
 									<div className="gap-2"></div>
-									{/* <div className="element-wrapper pb-4 mb-4 border-bottom">
-										<div className="element-box-tp">
-											<a className="btn btn-primary" href="# "><i className="os-icon os-icon-refresh-ccw"></i><span>Deposit Money</span></a><a className="btn btn-grey" href="# "><i className="os-icon os-icon-log-out"></i><span>Withdraw</span></a><a className="btn btn-grey d-none d-sm-inline-block" href="# "><i className="os-icon os-icon-plus-circle"></i><span>Add Wallet</span></a>
-										</div>
-									</div> */}
 									<div className="element-wrapper compact">
 										<div className="element-box-tp">
 											<div className="element-actions d-none d-sm-block">
@@ -102,9 +96,6 @@ class Dashboard extends Component {
 										<div className="value">
 											₦39,200
 										</div>
-										{/* <div className="trending trending-up">
-											<span>12%</span><i className="os-icon os-icon-arrow-up6"></i>
-										</div> */}
 									</a>
 								</div>
 								<div className="col-12 col-sm-4 col-xxl-4">
@@ -115,9 +106,6 @@ class Dashboard extends Component {
 										<div className="value">
 											₦11,955
 										</div>
-										{/* <div className="trending trending-down">
-											<span>12%</span><i className="os-icon os-icon-arrow-down6"></i>
-										</div> */}
 									</a>
 								</div>
 								<div className="col-12 col-sm-4 col-xxl-4">
@@ -128,12 +116,179 @@ class Dashboard extends Component {
 										<div className="value">
 											₦840
 										</div>
-										{/* <div className="trending trending-up">
-											<span>12%</span><i className="os-icon os-icon-arrow-up6"></i>
-										</div> */}
 									</a>
 								</div>
 								
+							</div> */}
+							
+							
+							<div className="row">
+								<div className="col-12 col-sm-4 col-xxl-4">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Debt Overview
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className="el-tablo centered highlight element-box">
+															<div className="">
+																Total Debt
+															</div>
+															<div className="value">
+																₦130,391,955
+															</div>
+														</div>
+
+														<div className="gap-2"></div>
+
+														<div className="el-tablo centered highlight element-box">
+															<div className="">
+																Due Debt
+															</div>
+															<div className="value">
+																₦45,201,964
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div className="col-12 col-sm-4 col-xxl-4">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Commissions
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className="el-tablo centered highlight element-box">
+															<div className="">
+																This Week
+															</div>
+															<div className="value">
+																₦171,955
+															</div>
+														</div>
+
+														<div className="gap-2"></div>
+
+														<div className="el-tablo centered highlight element-box">
+															<div className="">
+																Balance
+															</div>
+															<div className="value">
+																₦4,539,200
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+								<div className="col-12 col-sm-4 col-xxl-4">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Cashiers
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className="el-tablo centered highlight element-box">
+															<div className="">
+																Active
+															</div>
+															<div className="value">
+																11
+															</div>
+														</div>
+
+														<div className="gap-2"></div>
+
+														<div className="el-tablo centered highlight element-box">
+															<div className="">
+																Debt
+															</div>
+															<div className="value">
+																₦39,200
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div className="row">
+								<div className="col-12 col-sm-12 col-xxl-12">
+									<div class="balance-table pl-sm-2">
+										<table class="table table-lightborder table-bordered table-v-compact mb-0">
+											<tr>
+												<td>
+													<strong>2.34</strong>
+													<div class="balance-label smaller lighter text-nowrap">
+														Bitcoins BTC
+													</div>
+												</td>
+												<td>
+													<strong>1.74</strong>
+													<div class="balance-label smaller lighter text-nowrap">
+														Ripple RPX
+													</div>
+												</td>
+												<td class="d-sm-none d-xxxxl-table-cell d-md-table-cell d-xxl-none">
+													<strong>4.82</strong>
+													<div class="balance-label smaller lighter text-nowrap">
+														Newcoin NCN
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<strong>1.22</strong>
+													<div class="balance-label smaller lighter text-nowrap">
+														Litecoin LTC
+													</div>
+												</td>
+												<td>
+													<strong>1.87</strong>
+													<div class="balance-label smaller lighter text-nowrap">
+														Etherium ETH
+													</div>
+												</td>
+												<td class="d-sm-none d-xxxxl-table-cell d-md-table-cell d-xxl-none">
+													<strong>1.02</strong>
+													<div class="balance-label smaller lighter text-nowrap">
+														Dogecoin DGC
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
 							</div>
 						</div>
 						{/* <!--------------------
@@ -177,7 +332,7 @@ class Dashboard extends Component {
 														<form className="form-inline justify-content-sm-end">
 															<input className="form-control form-control-sm rounded bright" placeholder="Search" type="text" />
 															<select className="form-control form-control-sm rounded bright" defaultValue="">
-																<option selected="selected" value="">
+																<option value="">
 																	Select Status
 																</option>
 																<option value="Pending">
@@ -234,8 +389,8 @@ class Dashboard extends Component {
 																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
 														<tr>
@@ -252,8 +407,8 @@ class Dashboard extends Component {
 																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
 														<tr>
@@ -270,8 +425,8 @@ class Dashboard extends Component {
 																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
 														<tr>
@@ -288,8 +443,8 @@ class Dashboard extends Component {
 																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
 														<tr>
@@ -306,8 +461,8 @@ class Dashboard extends Component {
 																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
 													</tbody>

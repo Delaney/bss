@@ -457,6 +457,10 @@ template {
 	width: 100%;
 }
 
+.no-link-effect {
+	text-decoration: none;
+}
+
 .bonus-table {
 	font-size: 20px;
 }
@@ -467,6 +471,24 @@ template {
 
 .bonus-table .fpl-progress-w {
 	width: 100px;
+}
+
+.el-tablo.element-box {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	padding: 0.5rem 2rem;
+}
+
+.home-box-label {
+	letter-spacing: 1px;
+}
+
+.projects-list .bss-info {
+	padding: 20px !important;
+}
+
+.bss-info .value {
+	font-size: 2rem !important;
 }
 
 /****************************
@@ -12603,7 +12625,8 @@ body.menu-side-right .layout-w {
 }
 
 .content-w {
-	background-color: #f2f4f8;
+	/* background-color: #f2f4f8; */
+	background-color: #f7f6f2;
 	background-image: url("../img/bg-pattern.png");
 	background-repeat: no-repeat;
 	background-position: 20px 50px;
@@ -15987,9 +16010,9 @@ body.menu-side-right .layout-w {
 
 .el-tablo .label {
 	display: block;
-	font-size: 0.63rem;
+	font-size: 1.2rem;
 	text-transform: uppercase;
-	color: rgba(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.7);
 	letter-spacing: 1px;
 }
 
@@ -16099,7 +16122,7 @@ body.menu-side-right .layout-w {
 }
 
 .el-tablo.highlight .value {
-	color: #047bf8;
+	color: #c02526;
 }
 
 .el-tablo.bold-label .label {
@@ -16124,10 +16147,6 @@ a.el-tablo .value {
 a.el-tablo .label {
 	-webkit-transition: all 0.25s ease;
 	transition: all 0.25s ease;
-}
-
-a.el-tablo .home-box-label {
-	letter-spacing: 1px;
 }
 
 a.el-tablo:hover {
@@ -21937,7 +21956,7 @@ Pricing Plans Styles
 }
 
 .os-dropdown {
-	background-color: #047bf8;
+	background-color: #901d1d;
 	color: #fff;
 	padding: 20px 15px;
 	position: absolute;
@@ -26112,7 +26131,7 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 }
 
 .top-bar .logged-user-w .logged-user-menu {
-	background: #1b55e2;
+	background: #901d1d;
 	-webkit-box-shadow: 0 10px 30px 0 rgba(27, 30, 35, 0.27);
 					box-shadow: 0 10px 30px 0 rgba(27, 30, 35, 0.27);
 	position: absolute;
