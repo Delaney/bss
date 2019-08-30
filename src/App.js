@@ -669,7 +669,7 @@ class App extends Component {
 					END - Main Menu
 					--------------------> */}
 
-					<div className="content-w">
+					<div className="content-w bss-content">
 						
 						{/* <!--------------------
 						START - Top Bar
@@ -863,15 +863,18 @@ class App extends Component {
 									<i className="os-icon os-icon-close"></i>
 								</div>
 
-								<div className="element-wrapper compact">
+								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
 										{/* <a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a> */}
 										<h6 className="element-header element-action element-action-fold">
 											Pay to Baba Ijebu
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Deposit straight to Baba Ijebu from here!</p>
+										<div className="element-icon">
+											<i className="entypo-icon-credit-card"></i>
+										</div>
 									</div>
-									<div className="element-box-tp">
+									<div className="element-box-tp" style={{display: 'none'}}>
 										<form action="">
 											<div className="row">
 												<div className="col-6">
@@ -950,7 +953,10 @@ class App extends Component {
 										<h6 className="element-header element-action element-action-fold">
 											Transaction History
 										</h6>
-										<p className="element-sub-header element-action element-action-fold">View recent sales history</p>										
+										<p className="element-sub-header element-action element-action-fold">View recent sales history</p>
+										<div className="element-icon">
+											<i className="entypo-icon-text-document"></i>
+										</div>									
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
 										<table className="table table-compact smaller text-faded mb-0">
@@ -1091,10 +1097,13 @@ class App extends Component {
 								
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<h5 className="element-header">
+										<h6 className="element-header">
 											Bonus Completion
-										</h5>
-										<p className="element-sub-header element-action element-action-fold">Keep track of bonuses</p>									
+										</h6>
+										<p className="element-sub-header element-action element-action-fold">Keep track of bonuses</p>
+										<div className="element-icon">
+											<i className="entypo-icon-thumbs-up"></i>
+										</div>								
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
 										<h6>Sports Bet</h6>
@@ -1128,6 +1137,73 @@ class App extends Component {
 										</div>
 									</div>
 								</div>
+							
+								<div className="element-wrapper compact folded">
+									<div className="element-actions actions-only">
+										<h6 className="element-header">
+											Register a Cashier
+										</h6>
+										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
+											<i className="entypo-icon-add-user"></i>
+										</div>							
+									</div>
+									<div className="element-box-tp" style={{display: 'none'}}>
+										<h6>Sports Bet</h6>
+										<div className="fancy-progress-with-label">
+											<div className="fpl-label">
+												65%
+											</div>
+											<div className="fpl-progress-w">
+												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div className="element-wrapper compact folded">
+									<div className="element-actions actions-only">
+										<h6 className="element-header">
+											Suspend a Cashier
+										</h6>
+										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
+											<i className="entypo-icon-uninstall"></i>
+										</div>								
+									</div>
+									<div className="element-box-tp" style={{display: 'none'}}>
+										<h6>Sports Bet</h6>
+										<div className="fancy-progress-with-label">
+											<div className="fpl-label">
+												65%
+											</div>
+											<div className="fpl-progress-w">
+												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div className="element-wrapper compact folded">
+									<div className="element-actions actions-only">
+										<h6 className="element-header">
+											Query Betslip
+										</h6>
+										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
+											<i className="entypo-icon-news"></i>
+										</div>								
+									</div>
+									<div className="element-box-tp" style={{display: 'none'}}>
+										<h6>Sports Bet</h6>
+										<div className="fancy-progress-with-label">
+											<div className="fpl-label">
+												65%
+											</div>
+											<div className="fpl-progress-w">
+												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
 							</div>
 							{/* <!--------------------
 							END - Sidebar

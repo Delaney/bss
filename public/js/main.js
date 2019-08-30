@@ -952,7 +952,7 @@ $(function () {
 	// #24. Element Actions
 	$('.element-action-fold').on('click', function () {
 		var $wrapper = $(this).closest('.element-wrapper');
-		$wrapper.find('.element-box-tp, .element-box').toggle(0);
+		$wrapper.find('.element-box-tp, .element-box').toggle(200);
 		var $icon = $(this).find('i');
 
 		if ($wrapper.hasClass('folded')) {

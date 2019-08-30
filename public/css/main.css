@@ -483,9 +483,9 @@ template {
 	letter-spacing: 1px;
 }
 
-.projects-list .project-info.bss-info {
+/* .projects-list .project-info.bss-info {
 	padding: 20px;
-}
+} */
 
 .bss-info .el-tablo .value {
 	font-size: 2rem;
@@ -503,7 +503,7 @@ template {
 }
 
 .bss-panel .element-wrapper .element-actions {
-	float: none;
+	float: none !important;
 }
 
 .bss-panel .element-wrapper .element-header:after {
@@ -531,13 +531,54 @@ template {
 	margin-bottom: 0;
 }
 
+.bss-panel .element-icon {
+	position: absolute;
+	font-size: 60px;
+	color: rgba(255, 255, 255, 0.1);
+	bottom: -20px;
+	right: -10px;
+	display: block;
+	overflow: hidden;
+}
+
 .element-wrapper .element-actions .element-action {
 	cursor: pointer;
+}
+
+.menu-mobile .mm-logo-buttons-w .content-panel-open {
+	margin-right: 0 !important;
+	padding-right: 0 !important;
+	border: none;
+}
+
+.mobile-menu-trigger {
+	display: none;
 }
 
 @media only screen and (max-width: 767px){
 	.bss-info .el-tablo .value {
 		font-size: 1.5rem !important;
+	}
+
+	.projects-list .project-info.bss-info .el-tablo {
+		padding: 0;
+	}
+
+	.bss-info {
+		padding: 20px 10px;
+	}
+
+	.bss-info .table.table-v-compact td {
+		padding: .3rem .5rem;
+	}
+
+	.bss-content .top-bar {
+		-ms-flex-direction: row;
+		flex-direction: row;
+	}
+
+	.fs-img {
+		display: none;
 	}
 }
 
@@ -12721,9 +12762,9 @@ body.menu-side-right .layout-w {
 .content-panel .content-panel-close {
 	display: none;
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-size: 14px;
+	top: 16px;
+	right: 16px;
+	font-size: 18px;
 	color: #047bf8;
 	z-index: 999;
 	cursor: pointer;
@@ -12944,7 +12985,7 @@ body.menu-side-right .layout-w {
 */
 .menu-w .logo-w,
 .top-bar .logo-w {
-	padding: 10px 20px;
+	padding: 5px 20px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -26021,7 +26062,7 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 }
 
 .top-bar .logo-w img {
-	height: 25px;
+	height: 40px;
 	width: auto;
 	display: inline-block;
 	vertical-align: middle;
@@ -29041,7 +29082,7 @@ Contents:
 		padding: 15px;
 	}
 	.content-i .content-panel {
-		padding: 50px 15px;
+		padding: 60px 15px;
 		border-left: none;
 		display: block;
 		width: auto;
