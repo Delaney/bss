@@ -244,49 +244,86 @@ class Dashboard extends Component {
 
 							<div className="row">
 								<div className="col-12 col-sm-12 col-xxl-12">
-									<div class="balance-table pl-sm-2">
-										<table class="table table-lightborder table-bordered table-v-compact mb-0">
-											<tr>
-												<td>
-													<strong>2.34</strong>
-													<div class="balance-label smaller lighter text-nowrap">
-														Bitcoins BTC
-													</div>
-												</td>
-												<td>
-													<strong>1.74</strong>
-													<div class="balance-label smaller lighter text-nowrap">
-														Ripple RPX
-													</div>
-												</td>
-												<td class="d-sm-none d-xxxxl-table-cell d-md-table-cell d-xxl-none">
-													<strong>4.82</strong>
-													<div class="balance-label smaller lighter text-nowrap">
-														Newcoin NCN
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<strong>1.22</strong>
-													<div class="balance-label smaller lighter text-nowrap">
-														Litecoin LTC
-													</div>
-												</td>
-												<td>
-													<strong>1.87</strong>
-													<div class="balance-label smaller lighter text-nowrap">
-														Etherium ETH
-													</div>
-												</td>
-												<td class="d-sm-none d-xxxxl-table-cell d-md-table-cell d-xxl-none">
-													<strong>1.02</strong>
-													<div class="balance-label smaller lighter text-nowrap">
-														Dogecoin DGC
-													</div>
-												</td>
-											</tr>
-										</table>
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Bonuses
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<table className="table table-borderless table-v-compact mb-0">
+													<tbody>
+														<tr>
+															<td>
+																<div className="el-tablo centered highlight element-box">
+																	<div className="">
+																		Sports Bet
+																	</div>
+																	<div className="value">
+																		₦9,200
+																	</div>
+																</div>
+															</td>
+															<td>
+															<div className="el-tablo centered highlight element-box">
+																	<div className="">
+																		Sports Bet
+																	</div>
+																	<div className="value">
+																		₦9,200
+																	</div>
+																</div>
+															</td>
+															<td>
+																<div className="el-tablo centered highlight element-box">
+																	<div className="">
+																		Sports Bet
+																	</div>
+																	<div className="value">
+																		₦9,200
+																	</div>
+																</div>
+															</td>
+														</tr>
+														{/* <tr>
+															<td>
+																<div className="el-tablo centered highlight element-box">
+																	<div className="">
+																		Sports Bet
+																	</div>
+																	<div className="value">
+																		₦9,200
+																	</div>
+																</div>
+															</td>
+															<td>
+																<div className="el-tablo centered highlight element-box">
+																	<div className="">
+																		Sports Bet
+																	</div>
+																	<div className="value">
+																		₦9,200
+																	</div>
+																</div>
+															</td>
+															<td>
+																<div className="el-tablo centered highlight element-box">
+																	<div className="">
+																		Sports Bet
+																	</div>
+																	<div className="value">
+																		₦9,200
+																	</div>
+																</div>
+															</td>
+														</tr> */}
+													</tbody>
+												</table>											
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

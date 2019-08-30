@@ -743,9 +743,9 @@ class App extends Component {
 							--------------------> */}
 
 							<div className="top-menu-controls">
-								<div className="element-search autosuggest-search-activator">
+								{/* <div className="element-search autosuggest-search-activator">
 									<input placeholder="Start typing to search..." type="text"/>
-								</div>
+								</div> */}
 								
 								{/* <!--------------------
 								START - Settings Link in secondary top menu
@@ -858,19 +858,20 @@ class App extends Component {
 							{/* <!--------------------
 							START - Sidebar
 							--------------------> */}
-							<div className="content-panel compact color-scheme-dark">
+							<div className="content-panel bss-panel compact color-scheme-dark">
 								<div className="content-panel-close">
 									<i className="os-icon os-icon-close"></i>
 								</div>
 
-								<div className="element-wrapper compact folded">
+								<div className="element-wrapper compact">
 									<div className="element-actions actions-only">
-										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
+										{/* <a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a> */}
+										<h6 className="element-header element-action element-action-fold">
+											Pay to Baba Ijebu
+										</h6>
+										<p className="element-sub-header element-action element-action-fold">Deposit straight to Baba Ijebu from here!</p>
 									</div>
-									<h5 className="element-header">
-										Pay to Baba Ijebu
-									</h5>
-									<div className="element-box-tp" style={{display: 'none'}}>
+									<div className="element-box-tp">
 										<form action="">
 											<div className="row">
 												<div className="col-6">
@@ -943,13 +944,14 @@ class App extends Component {
 										</form>
 									</div>
 								</div>
+								
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
+										<h6 className="element-header element-action element-action-fold">
+											Transaction History
+										</h6>
+										<p className="element-sub-header element-action element-action-fold">View recent sales history</p>										
 									</div>
-									<h5 className="element-header">
-										Transaction History
-									</h5>
 									<div className="element-box-tp" style={{display: 'none'}}>
 										<table className="table table-compact smaller text-faded mb-0">
 											<thead>
@@ -1086,13 +1088,14 @@ class App extends Component {
 										<a className="centered-load-more-link smaller" href="# "><span>Load More Transactions</span></a>
 									</div>
 								</div>
+								
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
+										<h5 className="element-header">
+											Bonus Completion
+										</h5>
+										<p className="element-sub-header element-action element-action-fold">Keep track of bonuses</p>									
 									</div>
-									<h5 className="element-header">
-										Bonus Completion
-									</h5>
 									<div className="element-box-tp" style={{display: 'none'}}>
 										<h6>Sports Bet</h6>
 										<div className="fancy-progress-with-label">

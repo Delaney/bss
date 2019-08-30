@@ -483,12 +483,68 @@ template {
 	letter-spacing: 1px;
 }
 
-.projects-list .bss-info {
-	padding: 20px !important;
+.projects-list .project-info.bss-info {
+	padding: 20px;
 }
 
-.bss-info .value {
-	font-size: 2rem !important;
+.bss-info .el-tablo .value {
+	font-size: 2rem;
+}
+
+.projects-list .project-head .project-title {
+	margin: 0 auto;
+}
+
+.bss-panel .element-wrapper {
+	border: 1px solid;
+	border-radius: 4px;
+	padding: 20px;
+	margin-bottom: 15px; 
+}
+
+.bss-panel .element-wrapper .element-actions {
+	float: none;
+}
+
+.bss-panel .element-wrapper .element-header:after {
+	display: none;
+}
+
+.bss-panel .element-wrapper .element-header {
+	border: none;
+	padding: 0;
+	line-height: 24px;
+}
+
+.bss-panel .element-wrapper .element-header,
+.bss-panel .element-wrapper.folded .element-header {
+	margin-bottom: 10px;
+}
+
+.bss-panel .element-wrapper .element-sub-header {
+	margin-bottom: 10px;
+	font-size: 0.8rem;
+	color: #979da8;
+}
+
+.bss-panel .element-wrapper.folded .element-sub-header {
+	margin-bottom: 0;
+}
+
+.element-wrapper .element-actions .element-action {
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 767px){
+	.bss-info .el-tablo .value {
+		font-size: 1.5rem !important;
+	}
+}
+
+@media only screen and (max-width: 1024px){
+	.bss-info .el-tablo .value {
+		font-size: 1rem;
+	}
 }
 
 /****************************
@@ -15633,11 +15689,8 @@ body.menu-side-right .layout-w {
 }
 
 .menu-mobile.color-scheme-dark {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#3D4D75), to(#31395B));
-	background-image: linear-gradient(to bottom, #3D4D75 0%, #31395B 100%);
-	background-repeat: repeat-x;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#1c4cc3), to(#1c2e7b));
-	background-image: linear-gradient(to bottom, #1c4cc3 0%, #1c2e7b 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#c02526), to(#901d1d));
+	background-image: linear-gradient(to bottom, #c02526 0%, #901d1d 100%);
 	background-repeat: repeat-x;
 	color: rgba(255, 255, 255, 0.9);
 }
@@ -15655,7 +15708,7 @@ body.menu-side-right .layout-w {
 }
 
 .menu-mobile.color-scheme-dark ul.main-menu .icon-w {
-	color: #babed0;
+	color: #fff;
 }
 
 .menu-mobile.color-scheme-dark ul.main-menu > li {
@@ -27967,7 +28020,7 @@ Contents:
 		-webkit-box-flex: 0;
 				-ms-flex: 0 0 300px;
 						flex: 0 0 300px;
-		padding: 2rem 1rem;
+		padding: 3rem 1rem;
 	}
 	.content-box {
 		padding: 2rem;
@@ -28988,7 +29041,7 @@ Contents:
 		padding: 15px;
 	}
 	.content-i .content-panel {
-		padding: 30px 15px;
+		padding: 50px 15px;
 		border-left: none;
 		display: block;
 		width: auto;
