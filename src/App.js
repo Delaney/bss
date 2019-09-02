@@ -481,7 +481,7 @@ class App extends Component {
 									</div>
 								</div>
 							
-								<div className="element-wrapper compact folded">
+								<div className="element-wrapper compact">
 									<div className="element-actions actions-only">
 										<h6 className="element-header element-action element-action-fold">
 											Register a Cashier
@@ -490,7 +490,7 @@ class App extends Component {
 											<i className="entypo-icon-add-user"></i>
 										</div>							
 									</div>
-									<div className="element-box-tp" style={{display: 'none'}}>
+									<div className="element-box-tp">
 										<RegisterCashierForm></RegisterCashierForm>
 									</div>
 								</div>

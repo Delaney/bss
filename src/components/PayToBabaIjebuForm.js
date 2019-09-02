@@ -26,56 +26,85 @@ class PayToBabaIjebuForm extends Component {
 	}
 
 	render() {
-		var inputClass = classNames({
-			'form-control': true,
-			[`${styles.input}`]: true
+		// let inputClass = classNames({
+		// 	'form-control': true,
+		// 	[`${styles.input}`]: true
+		// });
+
+		let registerBtn = classNames({
+			'btn btn-bss btn-block btn-lg': true,
+			[`${styles.register}`]: true
 		});
 
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form>
 				<div className="row">
 					<div className="col-6">
 						<div className="form-group">
-							<label className={styles.label}>First Name</label>
-							<input className={inputClass} placeholder="First Name" type="text"/>
+							<label htmlFor="">From</label><select className="form-control">
+								<option>
+									Bitcoins
+								</option>
+								<option>
+									Litecoins
+								</option>
+								<option>
+									Ripple
+								</option>
+								<option>
+									Dogecoin
+								</option>
+							</select>
 						</div>
 					</div>
 					<div className="col-6">
 						<div className="form-group">
-							<label className={styles.label}>Last Name</label>
-							<input className="form-control" placeholder="Last Name" type="text"/>
+							<label htmlFor="">To</label><select className="form-control">
+								<option>
+									USD
+								</option>
+								<option>
+									Litecoins
+								</option>
+								<option>
+									Ripple
+								</option>
+								<option>
+									Dogecoin
+								</option>
+							</select>
 						</div>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-6">
 						<div className="form-group">
-							<label className={styles.label}>Email</label>
-							<input className="form-control" placeholder="Email Address" type="email"/>
+							<label htmlFor="">Amount</label>
+							<div className="input-group">
+								<input className="form-control" placeholder="Amount..." type="text" defaultValue="1.37" />
+								<div className="input-group-append">
+									<div className="input-group-text">
+										BTC
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div className="col-6">
 						<div className="form-group">
-							<label className={styles.label}>Username</label>
-							<input className="form-control" placeholder="Username" type="text"/>
+							<label htmlFor="">Price per BTC</label>
+							<div className="input-group">
+								<input className="form-control" type="text" defaultValue="8,284" />
+								<div className="input-group-append">
+									<div className="input-group-text">
+										USD
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div className="row">
-					<div className="col-6">
-						<div className="form-group">
-							<label className={styles.label}>Password</label>
-							<input className="form-control" placeholder="Password" type="password"/>
-						</div>
-					</div>
-					<div className="col-6">
-						<div className="form-group">
-							<label className={styles.label}>Confirm Password</label>
-							<input className="form-control" placeholder="Confirm Password" type="password"/>
-						</div>
-					</div>
-				</div>
-				<button className="btn btn-primary btn-block btn-lg"><i className="os-icon os-icon-refresh-ccw"></i><span>Register Now</span></button>
+				<button className={registerBtn}><i className="entypo-icon-direction"></i><span>Transfer Now</span></button>
 			</form>
 		);
 	};

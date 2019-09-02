@@ -5,3 +5,12 @@
 .input {
 	font-size: 14px;
 }
+
+.register {
+	font-size: 1rem;
+}
+
+.register i {
+	margin-right: 5px;
+    vertical-align: initial;
+}

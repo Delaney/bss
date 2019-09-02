@@ -449,8 +449,8 @@ template {
 
 .btn-bss {
 	color: #fff;
-	background-color: #c02526;
-	border-color: #c02526;
+	background-color: #901d1d;
+	border-color: #901d1d;
 }
 
 .color-bss {
@@ -508,7 +508,7 @@ a.color-bss:hover {
 	border-radius: 4px;
 	padding: 20px;
 	margin-bottom: 15px;
-	min-width: 285px;
+	width: 285px;
 }
 
 .bss-panel .element-wrapper .element-actions {
@@ -27167,11 +27167,11 @@ body.color-scheme-dark .content-panel-close, .content-panel.color-scheme-dark .c
 }
 
 body.color-scheme-dark .centered-load-more-link, .content-panel.color-scheme-dark .centered-load-more-link {
-	color: #717BAA;
+	color: #C02526;
 }
 
 body.color-scheme-dark .centered-load-more-link span, .content-panel.color-scheme-dark .centered-load-more-link span {
-	border-color: #717BAA;
+	border-color: #C02526;
 }
 
 body.color-scheme-dark .element-wrapper .element-actions .element-action, .content-panel.color-scheme-dark .element-wrapper .element-actions .element-action {
