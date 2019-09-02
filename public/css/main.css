@@ -453,6 +453,14 @@ template {
 	border-color: #c02526;
 }
 
+.color-bss {
+	color: #c02526;
+}
+
+a.color-bss:hover {
+	color: #000;
+}
+
 .w-100 {
 	width: 100%;
 }
@@ -499,7 +507,8 @@ template {
 	border: 1px solid;
 	border-radius: 4px;
 	padding: 20px;
-	margin-bottom: 15px; 
+	margin-bottom: 15px;
+	min-width: 285px;
 }
 
 .bss-panel .element-wrapper .element-actions {
@@ -557,15 +566,15 @@ template {
 
 @media only screen and (max-width: 767px){
 	.bss-info .el-tablo .value {
-		font-size: 1.5rem !important;
+		font-size: 1.3rem !important;
 	}
 
 	.projects-list .project-info.bss-info .el-tablo {
 		padding: 0;
 	}
 
-	.bss-info {
-		padding: 20px 10px;
+	.project-info.bss-info {
+		padding: 20px 5px !important;
 	}
 
 	.bss-info .table.table-v-compact td {
@@ -11246,7 +11255,7 @@ legend:before {
 					box-shadow: none;
 }
 
-.btn .os-icon, .all-wrapper .fc-button .os-icon {
+.btn .os-icon, .all-wrapper .fc-button .os-icon, .btn i, .all-wrapper .fc-button i {
 	font-size: 0.9rem;
 	display: inline-block;
 	vertical-align: middle;
@@ -12584,8 +12593,8 @@ body:before {
 	content: "";
 	position: absolute;
 	z-index: -1;
-	background: -webkit-gradient(linear, left top, right bottom, from(#D7BBEA), to(#65A8F1));
-	background: linear-gradient(to bottom right, #D7BBEA, #65A8F1);
+	background: -webkit-gradient(linear, left top, right bottom, from(#C02526), to(#030303));
+	background: linear-gradient(to bottom right, #C02526, #030303);
 	top: 0px;
 	left: 0px;
 	bottom: 0px;
@@ -18045,11 +18054,11 @@ a.with-avatar span {
 .centered-load-more-link span {
 	display: inline-block;
 	vertical-align: middle;
-	border-bottom: 1px solid #047bf8;
+	border-bottom: 1px solid #c02526;
 }
 
 .centered-load-more-link:hover span {
-	border-bottom-color: #0362c6;
+	border-bottom-color: #000;
 }
 
 .centered-load-more-link.smaller {
@@ -24657,7 +24666,6 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 	text-align: center;
 	padding: 20px;
 	font-size: 0.72rem;
-	margin-top: 50px;
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -27683,7 +27691,7 @@ body.color-scheme-dark .big-error-w form, .content-panel.color-scheme-dark .big-
 }
 
 body.color-scheme-dark .form-control, .content-panel.color-scheme-dark .form-control {
-	background-color: rgba(18, 22, 41, 0.22);
+	background-color: rgba(18, 22, 41, 0.75);
 	border-color: rgba(18, 22, 41, 0.34);
 	color: #ccd9e8;
 }

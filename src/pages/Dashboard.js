@@ -182,26 +182,27 @@ class Dashboard extends Component {
 															<td>
 															<div className="el-tablo centered highlight element-box">
 																	<div className="">
-																		Sports Bet
+																		Lotto Bet
 																	</div>
 																	<div className="value">
-																		₦9,200
+																		₦49,700
 																	</div>
 																</div>
 															</td>
 															<td>
 																<div className="el-tablo centered highlight element-box">
 																	<div className="">
-																		Sports Bet
+																		Virtual Bet
 																	</div>
 																	<div className="value">
-																		₦9,200
+																		₦1,600
 																	</div>
 																</div>
 															</td>
 														</tr>
 													</tbody>
-												</table>											
+												</table>
+												<a className="centered-load-more-link color-bss" href="# "><span>More</span></a>
 											</div>
 										</div>
 									</div>

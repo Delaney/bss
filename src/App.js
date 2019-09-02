@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
 import Dashboard from './pages/Dashboard'
+import PayToBabaIjebuForm from './components/PayToBabaIjebuForm'
+import RegisterCashierForm from './components/RegisterCashierForm'
 // import './App.css'
 
 // class App extends Component {
@@ -60,8 +62,7 @@ class App extends Component {
 							</a>
 							<div className="mm-buttons">
 								<div className="content-panel-open">
-									<div className="os-icon os-icon-grid-circles"></div>
-									{/* <img src="img/premier-bet-logo-small.png" alt=""/> */}
+									<div className="os-icon os-icon-hamburger-menu-1"></div>
 								</div>
 								<div className="mobile-menu-trigger">
 									<div className="os-icon os-icon-hamburger-menu-1"></div>
@@ -82,599 +83,23 @@ class App extends Component {
 									</div>
 								</div>
 							</div>
-
-							{/* <!--------------------
-							START - Mobile Menu List
-							--------------------> */}
-							<ul className="main-menu">
-								<li className="has-sub-menu">
-									<a href="index.html">
-										<div className="icon-w">
-											<div className="os-icon os-icon-layout"></div>
-										</div>
-										<span>Dashboard</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="index.html">Dashboard 1</a>
-										</li>
-										<li>
-											<a href="apps_crypto.html">Crypto Dashboard <strong className="badge badge-danger">Hot</strong></a>
-										</li>
-										<li>
-											<a href="apps_support_dashboard.html">Dashboard 3</a>
-										</li>
-										<li>
-											<a href="apps_projects.html">Dashboard 4</a>
-										</li>
-										<li>
-											<a href="apps_bank.html">Dashboard 5</a>
-										</li>
-										<li>
-											<a href="layouts_menu_top_image.html">Dashboard 6</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="layouts_menu_top_image.html">
-										<div className="icon-w">
-											<div className="os-icon os-icon-layers"></div>
-										</div>
-										<span>Menu Styles</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="layouts_menu_side_full.html">Side Menu Light</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_full_dark.html">Side Menu Dark</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="apps_pipeline.html">Side &amp Top Dark</a>
-										</li>
-										<li>
-											<a href="apps_projects.html">Side &amp; Top</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_mini.html">Mini Side Menu</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_compact.html">Compact Side Menu</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a>
-										</li>
-										<li>
-											<a href="layouts_menu_right.html">Right Menu</a>
-										</li>
-										<li>
-											<a href="layouts_menu_top.html">Top Menu Light</a>
-										</li>
-										<li>
-											<a href="layouts_menu_top_dark.html">Top Menu Dark</a>
-										</li>
-										<li>
-											<a href="layouts_menu_top_image.html">Top Menu Image <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a>
-										</li>
-										<li>
-											<a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a>
-										</li>
-										<li>
-											<a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a>
-										</li>
-										<li>
-											<a href="layouts_menu_side_compact_click.html">Menu Inside Click</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="apps_bank.html">
-										<div className="icon-w">
-											<div className="os-icon os-icon-package"></div>
-										</div>
-										<span>Applications</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="apps_email.html">Email Application</a>
-										</li>
-										<li>
-											<a href="apps_support_dashboard.html">Support Dashboard</a>
-										</li>
-										<li>
-											<a href="apps_support_index.html">Tickets Index</a>
-										</li>
-										<li>
-											<a href="apps_crypto.html">Crypto Dashboard <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="apps_projects.html">Projects List</a>
-										</li>
-										<li>
-											<a href="apps_bank.html">Banking <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="apps_full_chat.html">Chat Application</a>
-										</li>
-										<li>
-											<a href="apps_todo.html">To Do Application <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="misc_chat.html">Popup Chat</a>
-										</li>
-										<li>
-											<a href="apps_pipeline.html">CRM Pipeline</a>
-										</li>
-										<li>
-											<a href="rentals_index_grid.html">Property Listing <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="misc_calendar.html">Calendar</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
-											<div className="os-icon os-icon-file-text"></div>
-										</div>
-										<span>Pages</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="misc_invoice.html">Invoice</a>
-										</li>
-										<li>
-											<a href="rentals_index_grid.html">Property Listing <strong className="badge badge-danger">New</strong></a>
-										</li>
-										<li>
-											<a href="misc_charts.html">Charts</a>
-										</li>
-										<li>
-											<a href="auth_login.html">Login</a>
-										</li>
-										<li>
-											<a href="auth_register.html">Register</a>
-										</li>
-										<li>
-											<a href="auth_lock.html">Lock Screen</a>
-										</li>
-										<li>
-											<a href="misc_pricing_plans.html">Pricing Plans</a>
-										</li>
-										<li>
-											<a href="misc_error_404.html">Error 404</a>
-										</li>
-										<li>
-											<a href="misc_error_500.html">Error 500</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
-											<div className="os-icon os-icon-mail"></div>
-										</div>
-										<span>Emails</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="emails_welcome.html">Welcome Email</a>
-										</li>
-										<li>
-											<a href="emails_order.html">Order Confirmation</a>
-										</li>
-										<li>
-											<a href="emails_payment_due.html">Payment Due</a>
-										</li>
-										<li>
-											<a href="emails_forgot.html">Forgot Password</a>
-										</li>
-										<li>
-											<a href="emails_activate.html">Activate Account</a>
-										</li>
-									</ul>
-								</li>
-								<li className="has-sub-menu">
-									<a href="# ">
-										<div className="icon-w">
-											<div className="os-icon os-icon-users"></div>
-										</div>
-										<span>Users</span></a>
-									<ul className="sub-menu">
-										<li>
-											<a href="users_profile_big.html">Big Profile</a>
-										</li>
-										<li>
-											<a href="users_profile_small.html">Compact Profile</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							{/* <!--------------------
-							END - Mobile Menu List
-							--------------------> */}
-
-							<div className="mobile-menu-magic">
-								<h4>
-									Light Admin
-								</h4>
-								<p>
-									Clean Bootstrap 4 Template
-								</p>
-								<div className="btn-w">
-									<a className="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank" rel="noopener noreferrer">Purchase Now</a>
-								</div>
-							</div>
 						</div>
 					</div>
 					{/* <!--------------------
 					END - Mobile Menu
 					--------------------> */}
 					
-					{/* <!--------------------@
-					START - Main Menu
-					--------------------> */}
-					<div className="menu-w menu-activated-on-hover menu-has-selected-link selected-menu-color-light color-scheme-dark color-style-default sub-menu-color-dark menu-position-side menu-side-left menu-layout-mini sub-menu-style-over">
-						<div className="logo-w">
-							<a className="logo" href="index.html">
-								{/* <div className="logo-element"></div>
-								<div className="logo-label">
-									Clean Admin
-								</div> */}
-								<img src="img/premier-bet-logo-small.png" alt=""/>
-							</a>
-						</div>
-						<div className="logged-user-w avatar-inline">
-							<div className="logged-user-i">
-								<div className="avatar-w">
-									<img alt="" src="img/avatar1.jpg"/>
-								</div>
-								<div className="logged-user-info-w">
-									<div className="logged-user-name">
-										Maria Gomez
-									</div>
-									<div className="logged-user-role">
-										Administrator
-									</div>
-								</div>
-								<div className="logged-user-toggler-arrow">
-									<div className="os-icon os-icon-chevron-down"></div>
-								</div>
-								<div className="logged-user-menu color-style-bright">
-									<div className="logged-user-avatar-info">
-										<div className="avatar-w">
-											<img alt="" src="img/avatar1.jpg"/>
-										</div>
-										<div className="logged-user-info-w">
-											<div className="logged-user-name">
-												Maria Gomez
-											</div>
-											<div className="logged-user-role">
-												Administrator
-											</div>
-										</div>
-									</div>
-									<div className="bg-icon">
-										<i className="os-icon os-icon-wallet-loaded"></i>
-									</div>
-									<ul>
-										<li>
-											<a href="apps_email.html"><i className="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a>
-										</li>
-										<li>
-											<a href="users_profile_big.html"><i className="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
-										</li>
-										<li>
-											<a href="users_profile_small.html"><i className="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
-										</li>
-										<li>
-											<a href="# "><i className="os-icon os-icon-others-43"></i><span>Notifications</span></a>
-										</li>
-										<li>
-											<a href="# "><i className="os-icon os-icon-signs-11"></i><span>Logout</span></a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<h1 className="menu-page-header">
-							Page Header
-						</h1>
-						<ul className="main-menu">
-							<li className="sub-header">
-								<span>Layouts</span>
-							</li>
-							<li className="selected has-sub-menu">
-								<a href="index.html">
-									<div className="icon-w">
-										<div className="os-icon os-icon-layout"></div>
-									</div>
-									<span>Dashboard</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Dashboard
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-layout"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="index.html">Dashboard 1</a>
-											</li>
-											<li>
-												<a href="apps_crypto.html">Crypto Dashboard <strong className="badge badge-danger">Hot</strong></a>
-											</li>
-											<li>
-												<a href="apps_support_dashboard.html">Dashboard 3</a>
-											</li>
-											<li>
-												<a href="apps_projects.html">Dashboard 4</a>
-											</li>
-											<li>
-												<a href="apps_bank.html">Dashboard 5</a>
-											</li>
-											<li>
-												<a href="layouts_menu_top_image.html">Dashboard 6</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="layouts_menu_top_image.html">
-									<div className="icon-w">
-										<div className="os-icon os-icon-layers"></div>
-									</div>
-									<span>Menu Styles</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Menu Styles
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-layers"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="layouts_menu_side_full.html">Side Menu Light</a>
-											</li>
-											<li>
-												<a href="layouts_menu_side_full_dark.html">Side Menu Dark</a>
-											</li>
-											<li>
-												<a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="apps_pipeline.html">Side &amp; Top Dark</a>
-											</li>
-											<li>
-												<a href="apps_projects.html">Side &amp; Top</a>
-											</li>
-											<li>
-												<a href="layouts_menu_side_mini.html">Mini Side Menu</a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a>
-											</li>
-											<li>
-												<a href="layouts_menu_side_compact.html">Compact Side Menu</a>
-											</li>
-											<li>
-												<a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a>
-											</li>
-											<li>
-												<a href="layouts_menu_right.html">Right Menu</a>
-											</li>
-											<li>
-												<a href="layouts_menu_top.html">Top Menu Light</a>
-											</li>
-											<li>
-												<a href="layouts_menu_top_dark.html">Top Menu Dark</a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="layouts_menu_top_image.html">Top Menu Image <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a>
-											</li>
-											<li>
-												<a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a>
-											</li>
-											<li>
-												<a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a>
-											</li>
-											<li>
-												<a href="layouts_menu_side_compact_click.html">Menu Inside Click</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className="sub-header">
-								<span>Options</span>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="apps_bank.html">
-									<div className="icon-w">
-										<div className="os-icon os-icon-package"></div>
-									</div>
-									<span>Applications</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Applications
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-package"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="apps_email.html">Email Application</a>
-											</li>
-											<li>
-												<a href="apps_support_dashboard.html">Support Dashboard</a>
-											</li>
-											<li>
-												<a href="apps_support_index.html">Tickets Index</a>
-											</li>
-											<li>
-												<a href="apps_crypto.html">Crypto Dashboard <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="apps_projects.html">Projects List</a>
-											</li>
-											<li>
-												<a href="apps_bank.html">Banking <strong className="badge badge-danger">New</strong></a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="apps_full_chat.html">Chat Application</a>
-											</li>
-											<li>
-												<a href="apps_todo.html">To Do Application <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="misc_chat.html">Popup Chat</a>
-											</li>
-											<li>
-												<a href="apps_pipeline.html">CRM Pipeline</a>
-											</li>
-											<li>
-												<a href="rentals_index_grid.html">Property Listing <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="misc_calendar.html">Calendar</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-file-text"></div>
-									</div>
-									<span>Pages</span></a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										Pages
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-file-text"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="misc_invoice.html">Invoice</a>
-											</li>
-											<li>
-												<a href="rentals_index_grid.html">Property Listing <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="misc_charts.html">Charts</a>
-											</li>
-											<li>
-												<a href="auth_login.html">Login</a>
-											</li>
-											<li>
-												<a href="auth_register.html">Register</a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="auth_lock.html">Lock Screen</a>
-											</li>
-											<li>
-												<a href="misc_pricing_plans.html">Pricing Plans</a>
-											</li>
-											<li>
-												<a href="misc_error_404.html">Error 404</a>
-											</li>
-											<li>
-												<a href="misc_error_500.html">Error 500</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li className=" has-sub-menu">
-								<a href="# ">
-									<div className="icon-w">
-										<div className="os-icon os-icon-life-buoy"></div>
-									</div>
-									<span>UI Kit</span>
-								</a>
-								<div className="sub-menu-w">
-									<div className="sub-menu-header">
-										UI Kit
-									</div>
-									<div className="sub-menu-icon">
-										<i className="os-icon os-icon-life-buoy"></i>
-									</div>
-									<div className="sub-menu-i">
-										<ul className="sub-menu">
-											<li>
-												<a href="uikit_modals.html">Modals <strong className="badge badge-danger">New</strong></a>
-											</li>
-											<li>
-												<a href="uikit_alerts.html">Alerts</a>
-											</li>
-											<li>
-												<a href="uikit_grid.html">Grid</a>
-											</li>
-											<li>
-												<a href="uikit_progress.html">Progress</a>
-											</li>
-											<li>
-												<a href="uikit_popovers.html">Popover</a>
-											</li>
-											</ul><ul className="sub-menu">
-											<li>
-												<a href="uikit_tooltips.html">Tooltips</a>
-											</li>
-											<li>
-												<a href="uikit_buttons.html">Buttons</a>
-											</li>
-											<li>
-												<a href="uikit_dropdowns.html">Dropdowns</a>
-											</li>
-											<li>
-												<a href="uikit_typography.html">Typography</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<div className="side-menu-magic">
-							<h4>
-								Light Admin
-							</h4>
-							<p>
-								Clean Bootstrap 4 Template
-							</p>
-							<div className="btn-w">
-								<a className="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank" rel="noopener noreferrer">Purchase Now</a>
-							</div>
-						</div>
-					</div>
-					{/* <!--------------------
-					END - Main Menu
-					--------------------> */}
-
 					<div className="content-w bss-content">
 						
 						{/* <!--------------------
 						START - Top Bar
 						--------------------> */}
 						<div className="top-bar color-scheme-dark">
+							<div className="logo-w">
+								<a className="logo" href="index.html">
+									<img src="img/premier-bet-logo-small.png" alt=""/>
+								</a>
+							</div>
 							<div className="fancy-selector-w">
 								<div className="fancy-selector-current">
 									<div className="fs-img">
@@ -719,21 +144,8 @@ class App extends Component {
 											</div>
 										</div>
 									</div>
-									<div className="fancy-selector-option">
-										<div className="fs-img">
-											<img alt="" src="img/card3.png"/>
-										</div>
-										<div className="fs-main-info">
-											<div className="fs-name">
-												<span>Ripple Portfolio</span><strong>RPX</strong>
-											</div>
-											<div className="fs-sub">
-												<span>Wallet Balance:</span><strong>₦1,202</strong>
-											</div>
-										</div>
-									</div>
 									<div className="fancy-selector-actions text-right">
-										<a className="btn btn-dark" href="# "><i className="os-icon os-icon-ui-22"></i><span>Add Account</span></a>
+										<a className="btn btn-dark" href="# "><i className="os-icon os-icon-ui-22"></i><span>Add Wallet</span></a>
 									</div>
 								</div>
 							</div>
@@ -875,76 +287,7 @@ class App extends Component {
 										</div>
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
-										<form action="">
-											<div className="row">
-												<div className="col-6">
-													<div className="form-group">
-														<label htmlFor="">From</label>
-														<select className="form-control">
-															<option>
-																Bitcoins
-															</option>
-															<option>
-																Litecoins
-															</option>
-															<option>
-																Ripple
-															</option>
-															<option>
-																Dogecoin
-															</option>
-														</select>
-													</div>
-												</div>
-												<div className="col-6">
-													<div className="form-group">
-														<label htmlFor="">To</label><select className="form-control">
-															<option>
-																USD
-															</option>
-															<option>
-																Litecoins
-															</option>
-															<option>
-																Ripple
-															</option>
-															<option>
-																Dogecoin
-															</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div className="row">
-												<div className="col-6">
-													<div className="form-group">
-														<label htmlFor="">Amount</label>
-														<div className="input-group">
-															<input className="form-control" placeholder="Amount..." type="text" defaultValue="1.37"/>
-															<div className="input-group-append">
-																<div className="input-group-text">
-																	BTC
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div className="col-6">
-													<div className="form-group">
-														<label htmlFor="">Price per BTC</label>
-														<div className="input-group">
-															<input className="form-control" type="text" defaultValue="8,284"/>
-															<div className="input-group-append">
-																<div className="input-group-text">
-																	USD
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<button className="btn btn-primary btn-block btn-lg"><i className="os-icon os-icon-refresh-ccw"></i><span>Transfer Now</span></button>
-										</form>
+										<PayToBabaIjebuForm></PayToBabaIjebuForm>
 									</div>
 								</div>
 								
@@ -1097,7 +440,7 @@ class App extends Component {
 								
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<h6 className="element-header">
+										<h6 className="element-header element-action element-action-fold">
 											Bonus Completion
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Keep track of bonuses</p>
@@ -1140,7 +483,7 @@ class App extends Component {
 							
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<h6 className="element-header">
+										<h6 className="element-header element-action element-action-fold">
 											Register a Cashier
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
@@ -1148,21 +491,13 @@ class App extends Component {
 										</div>							
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
-										<h6>Sports Bet</h6>
-										<div className="fancy-progress-with-label">
-											<div className="fpl-label">
-												65%
-											</div>
-											<div className="fpl-progress-w">
-												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-											</div>
-										</div>
+										<RegisterCashierForm></RegisterCashierForm>
 									</div>
 								</div>
 
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<h6 className="element-header">
+										<h6 className="element-header element-action element-action-fold">
 											Suspend a Cashier
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
@@ -1184,7 +519,7 @@ class App extends Component {
 
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										<h6 className="element-header">
+										<h6 className="element-header element-action element-action-fold">
 											Query Betslip
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
@@ -1212,6 +547,14 @@ class App extends Component {
 					</div>
 				</div>
 				<div className="display-type"></div>
+				<div className="footer-w">
+					<div className="fade3"></div>
+					<div className="os-container">
+						<div className="deep-footer">
+							2019 &copy; Swift Mini by High Tech Synergy.                 
+						</div>
+					</div>
+				</div>
 			</div>
 		)
 	}
