@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
-import Dashboard from './pages/Dashboard'
-import PayToBabaIjebuForm from './components/sidebar/PayToBabaIjebuForm'
-import RegisterCashierForm from './components/sidebar/RegisterCashierForm'
+/* Pages */
+import Dashboard from './pages/Dashboard';
+
+/* Components */
+import StatusInTopbar from './components/StatusInTopbar';
+
+/* Sidebar Components */
+import PayToBabaIjebuForm from './components/sidebar/PayToBabaIjebuForm';
+import RegisterCashierForm from './components/sidebar/RegisterCashierForm';
 import QueryBetSlipForm from './components/sidebar/QueryBetSlipForm';
+
 
 // import './App.css'
 
@@ -45,7 +52,9 @@ import QueryBetSlipForm from './components/sidebar/QueryBetSlipForm';
 // }
 
 class App extends Component {
-	state = {}
+	state = {
+		stat: Math.floor(Math.random() * 100) % 2
+	}
 
 	render() {
 		return (
@@ -72,7 +81,7 @@ class App extends Component {
 						<div className="menu-and-user">
 							<div className="logged-user-w">
 								<div className="avatar-w">
-									<img alt="" src="img/avatar1.jpg"/>
+									<img alt="" src="img/user.png"/>
 								</div>
 								<div className="logged-user-info-w">
 									<div className="logged-user-name">
@@ -160,10 +169,7 @@ class App extends Component {
 									<input placeholder="Start typing to search..." type="text"/>
 								</div> */}
 
-								<div className="agent-status">
-									<span>Blocked</span>
-									<div className="status-pill red hvr-pulse" data-title="Blocked" data-toggle="tooltip"></div>
-								</div>
+								<StatusInTopbar status={this.state.stat}></StatusInTopbar>
 								
 								{/* <!--------------------
 								START - Settings Link in secondary top menu
@@ -200,12 +206,12 @@ class App extends Component {
 								<div className="logged-user-w">
 									<div className="logged-user-i">
 										<div className="avatar-w">
-											<img alt="" src="img/avatar1.jpg"/>
+											<img alt="" src="img/user.png"/>
 										</div>
 										<div className="logged-user-menu color-style-bright">
 											<div className="logged-user-avatar-info">
 												<div className="avatar-w">
-													<img alt="" src="img/avatar1.jpg"/>
+													<img alt="" src="img/user.png"/>
 												</div>
 												<div className="logged-user-info-w">
 													<div className="logged-user-name">
@@ -487,7 +493,7 @@ class App extends Component {
 									</div>
 								</div>
 							
-								<div className="element-wrapper compact">
+								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
 										<h6 className="element-header element-action element-action-fold">
 											Register a Cashier
@@ -496,7 +502,7 @@ class App extends Component {
 											<i className="entypo-icon-add-user"></i>
 										</div>							
 									</div>
-									<div className="element-box-tp">
+									<div className="element-box-tp" style={{display: 'none'}}>
 										<RegisterCashierForm></RegisterCashierForm>
 									</div>
 								</div>

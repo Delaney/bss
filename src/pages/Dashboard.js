@@ -100,7 +100,7 @@ class Dashboard extends Component {
 
 														<div className="el-tablo centered highlight element-box">
 															<div className="">
-																Balance
+																Commission Balance
 															</div>
 															<div className="value">
 																₦4,539,200
