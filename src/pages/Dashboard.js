@@ -283,7 +283,7 @@ class Dashboard extends Component {
 																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
 																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
@@ -301,7 +301,7 @@ class Dashboard extends Component {
 																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
 																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
@@ -319,7 +319,7 @@ class Dashboard extends Component {
 																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
 																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
@@ -337,7 +337,7 @@ class Dashboard extends Component {
 																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
 																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
@@ -355,7 +355,7 @@ class Dashboard extends Component {
 																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
 															</td>
 															<td className="row-actions">
-																<a className="no-link-effect" href="# "><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
 																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
 															</td>
 														</tr>
@@ -365,35 +365,62 @@ class Dashboard extends Component {
 											{/* <!--------------------
 											END - Cashier table
 											---------------------> */}
-											
 
-											{/* <div className="controls-below-table">
-												<div className="table-records-info">
-													Showing records 1 - 5
+											{/* <!--------------------
+											START - Fund Cashier modal
+											---------------------> */}										
+											<div aria-hidden="true" className="onboarding-modal modal fade" id="onboardingFormModal" role="dialog" tabIndex="-1">
+												<div className="modal-dialog modal-centered" role="document">
+													<div className="modal-content text-center">
+														<button aria-label="Close" className="close" data-dismiss="modal" type="button">
+															<span className="close-label">Skip Intro</span>
+															<span className="os-icon os-icon-close"></span>
+														</button>
+														<div className="onboarding-content with-gradient">
+															<h4 className="onboarding-title">
+																Fund Cashier Wallet
+															</h4>
+															{/* <div className="onboarding-text">
+																In this example you can see a form where you can request some additional information from the customer when they land on the app page.
+															</div> */}
+															<form>
+																<div className="form-row">
+																	<div className="col-sm-6">
+																		<div className="form-group">
+																			<label htmlFor="">Your Full Name</label>
+																			<input className="form-control" placeholder="Enter amount" type="text"/>
+																		</div>
+																	</div>
+																	<div className="col-sm-6">
+																		<div className="form-group">
+																			<label htmlFor="">Source Wallet</label>
+																			<select className="form-control" defaultValue="">
+																				<option value="">
+																					Select a wallet...
+																				</option>
+																				<option>
+																					Providus
+																				</option>
+																				<option>
+																					Business Owner
+																				</option>
+																				<option>
+																					Other
+																				</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<button className="btn btn-bss btn-lg" type="submit">Fund Now</button>
+															</form>
+														</div>
+													</div>
 												</div>
-												<div className="table-records-pages">
-													<ul>
-														<li>
-															<a href="# ">Previous</a>
-														</li>
-														<li>
-															<a className="current" href="# ">1</a>
-														</li>
-														<li>
-															<a href="# ">2</a>
-														</li>
-														<li>
-															<a href="# ">3</a>
-														</li>
-														<li>
-															<a href="# ">4</a>
-														</li>
-														<li>
-															<a href="# ">Next</a>
-														</li>
-													</ul>
-												</div>
-											</div> */}
+											</div>
+											{/* <!--------------------
+											END - Fund Cashier modal
+											---------------------> */}
+
 										</div>
 									</div>
 								</div>
