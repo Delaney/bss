@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Dashboard from './pages/Dashboard'
 import PayToBabaIjebuForm from './components/sidebar/PayToBabaIjebuForm'
 import RegisterCashierForm from './components/sidebar/RegisterCashierForm'
+import QueryBetSlipForm from './components/sidebar/QueryBetSlipForm';
+
 // import './App.css'
 
 // class App extends Component {
@@ -43,9 +45,7 @@ import RegisterCashierForm from './components/sidebar/RegisterCashierForm'
 // }
 
 class App extends Component {
-	state = {
-
-	}
+	state = {}
 
 	render() {
 		return (
@@ -107,7 +107,8 @@ class App extends Component {
 									</div>
 									<div className="fs-main-info">
 										<div className="fs-name">
-											<span>Providus</span><strong>BTC</strong>
+											<span>Providus</span>
+											{/* <strong>BTC</strong> */}
 										</div>
 										<div className="fs-sub">
 											<span>Wallet Balance:</span><strong>₦5,304</strong>
@@ -158,6 +159,11 @@ class App extends Component {
 								{/* <div className="element-search autosuggest-search-activator">
 									<input placeholder="Start typing to search..." type="text"/>
 								</div> */}
+
+								<div className="agent-status">
+									<span>Blocked</span>
+									<div className="status-pill red hvr-pulse" data-title="Blocked" data-toggle="tooltip"></div>
+								</div>
 								
 								{/* <!--------------------
 								START - Settings Link in secondary top menu
@@ -527,15 +533,7 @@ class App extends Component {
 										</div>								
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
-										<h6>Sports Bet</h6>
-										<div className="fancy-progress-with-label">
-											<div className="fpl-label">
-												65%
-											</div>
-											<div className="fpl-progress-w">
-												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-											</div>
-										</div>
+										<QueryBetSlipForm></QueryBetSlipForm>
 									</div>
 								</div>
 

@@ -89,7 +89,7 @@ class RegisterCashierForm extends Component {
 
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<div className="row">
+				<div className="form-row">
 					<div className="col-6">
 						<div className="form-group">
 							<label className={styles.label}>First Name</label>
@@ -109,7 +109,7 @@ class RegisterCashierForm extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="row">
+				<div className="form-row">
 					<div className="col-6">
 						<div className="form-group">
 							<label className={styles.label}>Email</label>
@@ -129,7 +129,7 @@ class RegisterCashierForm extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="row">
+				<div className="form-row">
 					<div className="col-6">
 						<div className="form-group">
 							<label className={styles.label}>Password</label>

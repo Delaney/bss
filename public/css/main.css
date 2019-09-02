@@ -495,6 +495,14 @@ a.color-bss:hover {
 	padding: 20px;
 } */
 
+.agent-status span {
+	color: #fff;
+}
+
+.agent-status, .agent-status span {
+	margin-right: 10px;
+}
+
 .bss-info .el-tablo .value {
 	font-size: 2rem;
 }
@@ -564,6 +572,33 @@ a.color-bss:hover {
 	display: none;
 }
 
+@keyframes hvr-pulse {
+	25% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	75% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+.hvr-pulse {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-animation-name: hvr-pulse;
+	animation-name: hvr-pulse;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
 @media only screen and (max-width: 767px){
 	.bss-info .el-tablo .value {
 		font-size: 1.3rem !important;
@@ -588,6 +623,26 @@ a.color-bss:hover {
 
 	.fs-img {
 		display: none;
+	}
+
+	.agent-status {
+		margin: 0 10px 0 20px;
+	}
+
+	.agent-status span {
+		display: none;
+	}
+
+	.agent-status .status-pill {
+		margin: 0 auto;
+	}
+
+	.top-bar .top-icon {
+		margin: 0px 0.5rem;
+	}
+
+	.top-bar .logged-user-w {
+		padding: 0px 0.5rem;
 	}
 }
 
@@ -26438,6 +26493,8 @@ body.rentals-wrapper .select2-container--default .select2-results__option[aria-s
 
 .top-bar.color-scheme-dark {
 	background-color: #c02526;
+	background: -webkit-linear-gradient(to right, #c02526, #901d1d, #000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #c02526, #901d1d, #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .top-bar.color-scheme-bright {
