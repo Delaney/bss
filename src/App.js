@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
 import Dashboard from './pages/Dashboard'
-import PayToBabaIjebuForm from './components/PayToBabaIjebuForm'
-import RegisterCashierForm from './components/RegisterCashierForm'
+import PayToBabaIjebuForm from './components/sidebar/PayToBabaIjebuForm'
+import RegisterCashierForm from './components/sidebar/RegisterCashierForm'
 // import './App.css'
 
 // class App extends Component {
