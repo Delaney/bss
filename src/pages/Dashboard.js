@@ -17,13 +17,9 @@ class Dashboard extends Component {
 
 		$(function() {
 			$(".bonusProgress").each(function() {
-				console.log(this);
-
 				var value = $(this).attr('data-value');
 				var left = $(this).find('.bonusProgressLeft');
 				var right = $(this).find('.bonusProgressRight');
-
-				console.log(`Values: ${value}, ${left}, ${right}`);
 
 				if (value > 0) {
 					if (value <= 50) {
@@ -106,10 +102,10 @@ class Dashboard extends Component {
 													<div className="col-sm-12">
 
 														<div className="el-tablo centered highlight element-box">
-															<div className="fw700">
+															<div className="font-weight-bold">
 																Due Debt
 															</div>
-															<div className="value fw700">
+															<div className="value font-weight-bold">
 																₦45,201,964
 															</div>
 														</div>
@@ -119,10 +115,10 @@ class Dashboard extends Component {
 														<div className="gap-3 d-sm-none"></div>
 														
 														<div className="el-tablo centered highlight element-box trend-in-corner smaller">
-															<div className="fw300">
+															<div className="font-weight-light">
 																Total Debt
 															</div>
-															<div className="value">
+															<div className="value font-weight-light">
 																₦130,391,955
 															</div>
 															<div className="trending trending-up">
@@ -153,10 +149,10 @@ class Dashboard extends Component {
 													<div className="col-sm-12">
 														
 														<div className="el-tablo centered highlight element-box">
-															<div className="fw700">
+															<div className="font-weight-bold">
 																Commission Balance
 															</div>
-															<div className="value fw700">
+															<div className="value font-weight-bold">
 																₦4,539,200
 															</div>
 														</div>
@@ -166,10 +162,10 @@ class Dashboard extends Component {
 														<div className="gap-3 d-sm-none"></div>
 														
 														<div className="el-tablo centered highlight element-box trend-in-corner smaller">
-															<div className="fw300">
+															<div className="font-weight-light">
 																This Week
 															</div>
-															<div className="value">
+															<div className="value font-weight-light">
 																₦171,955
 															</div>
 															<div className="trending trending-down">
@@ -198,10 +194,10 @@ class Dashboard extends Component {
 												<div className="row align-items-center">
 													<div className="col-sm-12">
 														<div className="el-tablo centered highlight element-box">
-															<div className="fw700">
+															<div className="font-weight-bold">
 																Debt
 															</div>
-															<div className="value fw700">
+															<div className="value font-weight-bold">
 																₦39,200
 															</div>
 														</div>
@@ -211,10 +207,10 @@ class Dashboard extends Component {
 														<div className="gap-3 d-sm-none"></div>
 														
 														<div className="el-tablo centered highlight element-box trend-in-corner smaller">
-															<div className="fw300">
+															<div className="font-weight-light">
 																Active
 															</div>
-															<div className="value">
+															<div className="value font-weight-light">
 																11
 															</div>
 														</div>
@@ -227,61 +223,6 @@ class Dashboard extends Component {
 								</div>
 
 							</div>
-
-							{/* <div className="row">
-								<div className="col-12 col-sm-12 col-xxl-12">
-									<div className="projects-list text-center">
-										<div className="project-box">
-											<div className="project-head">
-												<div className="project-title">
-													<h5>
-														Bonuses
-													</h5>
-												</div>
-											</div>
-											<div className="project-info bss-info">
-												<table className="table table-borderless table-v-compact mb-0">
-													<tbody>
-														<tr>
-															<td>
-																<div className="el-tablo centered highlight element-box">
-																	<div className="">
-																		Sports Bet
-																	</div>
-																	<div className="value">
-																		₦9,200
-																	</div>
-																</div>
-															</td>
-															<td>
-															<div className="el-tablo centered highlight element-box">
-																	<div className="">
-																		Lotto Bet
-																	</div>
-																	<div className="value">
-																		₦49,700
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div className="el-tablo centered highlight element-box">
-																	<div className="">
-																		Virtual Bet
-																	</div>
-																	<div className="value">
-																		₦1,600
-																	</div>
-																</div>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-												<a className="centered-load-more-link color-bss" href="# "><span>More</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> */}
 						
 							<div className="row">
 								<div className="col-sm-12">
@@ -499,7 +440,7 @@ class Dashboard extends Component {
 
 						</div>
 						{/* <!--------------------
-						END - Overview Tab
+						END - Summary Tab
 						--------------------> */}
 					
 						{/* <!--------------------
@@ -529,7 +470,7 @@ class Dashboard extends Component {
 							<div className="row">
 
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<a className="no-link-effect" href="# ">
+									<a className="no-link-effect color-black" href="# ">
 									<div className="projects-list text-center">
 										<div className="project-box">
 											<div className="project-head">
@@ -550,7 +491,7 @@ class Dashboard extends Component {
 																<span className={progressBarRight}></span>
 															</span>
 															<div className={progressValueClass}>
-																<div>{this.state.prog1}<sup>%</sup></div>
+																<div className="h4 font-weight-bold">{this.state.prog1}<sup className="small">%</sup></div>
 															</div>
 														</div>
 													</div>
@@ -582,7 +523,7 @@ class Dashboard extends Component {
 																<span className={progressBarRight}></span>
 															</span>
 															<div className={progressValueClass}>
-																<div>{this.state.prog2}<sup>%</sup></div>
+																<div className="h4 font-weight-bold">{this.state.prog2}<sup className="small">%</sup></div>
 															</div>
 														</div>
 													</div>
@@ -613,7 +554,7 @@ class Dashboard extends Component {
 																<span className={progressBarRight}></span>
 															</span>
 															<div className={progressValueClass}>
-																<div>100<sup>%</sup></div>
+																<div className="h4 font-weight-bold">100<sup className="small">%</sup></div>
 															</div>
 														</div>
 													</div>
@@ -622,37 +563,6 @@ class Dashboard extends Component {
 										</div>
 									</div>
 								</div>
-
-								{/* <div className="col-12 col-sm-4 col-xxl-4">
-									<div className="projects-list text-center">
-										<div className="project-box">
-											<div className="project-head">
-												<div className="project-title">
-													<h5>
-														Virtuals Bonus
-													</h5>
-												</div>
-											</div>
-											<div className="project-info bss-info">
-												<div className="row align-items-center">
-													<div className="col-sm-12">
-														<div className={progressClass} data-value={this.state.prog4}>
-															<span className={styles['progress-left']}>
-																<span className={progressBarLeft}></span>
-															</span>
-															<span className={styles['progress-right']}>
-																<span className={progressBarRight}></span>
-															</span>
-															<div className={progressValueClass}>
-																<div>{this.state.prog4}<sup>%</sup></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div> */}
 							</div>
 
 						</div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import $ from 'jquery'
 // import axios from 'axios'
 
 /* Pages */
@@ -55,6 +56,23 @@ import SuspendCashierForm from './components/sidebar/SuspendCashierForm';
 class App extends Component {
 	state = {
 		stat: Math.floor(Math.random() * 100) % 2
+	}
+
+	componentDidMount(){
+		$(function(){
+			$(".fpl-progress-i").each(function() {
+				console.log(this);
+				console.log($(this).css('width'));
+				let width = $(this).css('width');
+
+				if (width === "100%"){
+					$(this).css({
+						'background-image': 'linear-gradient(-270deg,#28a745 0,#000 98%)',
+						'background-color': '#28a745'
+					});
+				}
+			});
+		});
 	}
 
 	render() {
@@ -290,12 +308,11 @@ class App extends Component {
 
 								<div className="element-wrapper compact folded">
 									<div className="element-actions actions-only">
-										{/* <a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a> */}
 										<h6 className="element-header element-action element-action-fold">
 											Pay to Baba Ijebu
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Deposit straight to Baba Ijebu from here!</p>
-										<div className="element-icon">
+										<div className="element-icon element-action element-action-fold">
 											<i className="entypo-icon-credit-card"></i>
 										</div>
 									</div>
@@ -310,7 +327,7 @@ class App extends Component {
 											Transaction History
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">View recent sales history</p>
-										<div className="element-icon">
+										<div className="element-icon element-action element-action-fold">
 											<i className="entypo-icon-text-document"></i>
 										</div>									
 									</div>
@@ -457,7 +474,7 @@ class App extends Component {
 											Bonus Completion
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Keep track of bonuses</p>
-										<div className="element-icon">
+										<div className="element-icon element-action element-action-fold">
 											<i className="entypo-icon-thumbs-up"></i>
 										</div>								
 									</div>
@@ -491,6 +508,16 @@ class App extends Component {
 												<div className="fpl-progress-i" style={{ width: '92%' }}></div>
 											</div>
 										</div>
+
+										<h6>Completed Example</h6>
+										<div className="fancy-progress-with-label">
+											<div className="fpl-label">
+												100%
+											</div>
+											<div className="fpl-progress-w">
+												<div className="fpl-progress-i" style={{ width: '100%' }}></div>
+											</div>
+										</div>
 									</div>
 								</div>
 							
@@ -499,7 +526,7 @@ class App extends Component {
 										<h6 className="element-header element-action element-action-fold">
 											Register a Cashier
 										</h6>
-										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
+										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon element-action element-action-fold">
 											<i className="entypo-icon-add-user"></i>
 										</div>							
 									</div>
@@ -513,7 +540,7 @@ class App extends Component {
 										<h6 className="element-header element-action element-action-fold">
 											Suspend a Cashier
 										</h6>
-										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
+										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon element-action element-action-fold">
 											<i className="entypo-icon-uninstall"></i>
 										</div>								
 									</div>
@@ -527,7 +554,7 @@ class App extends Component {
 										<h6 className="element-header element-action element-action-fold">
 											Query Betslip
 										</h6>
-										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon">
+										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon element-action element-action-fold">
 											<i className="entypo-icon-news"></i>
 										</div>								
 									</div>

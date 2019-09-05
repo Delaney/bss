@@ -470,16 +470,12 @@ a.color-bss:hover {
 	color: #000;
 }
 
-.no-link-effect {
+.color-black, .color-black:hover {
+	color: #000;
+}
+
+.no-link-effect:hover, .no-link-effect:hover > * {
 	text-decoration: none;
-}
-
-.fw300 {
-	font-weight: 300 !important;
-}
-
-.fw700 {
-	font-weight: 700 !important;
 }
 
 /* END: HELPERS */
