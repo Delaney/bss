@@ -1,8 +1,66 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
+import $ from 'jquery';
+
+import styles from './styles/Dashboard.module.css';
 
 class Dashboard extends Component {
+	
+	state = {
+		prog: Math.floor(Math.random() * 100) + 1
+	}
+
 	render() {
+
+		$(function() {
+			$(".bonusProgress").each(function() {
+				console.log(this);
+
+				var value = $(this).attr('data-value');
+				var left = $(this).find('.bonusProgressLeft');
+				var right = $(this).find('.bonusProgressRight');
+
+				console.log(`Values: ${value}, ${left}, ${right}`);
+
+				if (value > 0) {
+					if (value <= 50) {
+						right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+					} else {
+						right.css('transform', 'rotate(180deg)')
+						left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+					}
+				}
+
+				if (value >= 100) {
+					$('.bonusProgressLeft, .bonusProgressRight').removeClass('border-bss').addClass('border-success');
+				}
+			});
+
+			function percentageToDegrees(percentage) {
+				return percentage / 100 * 360
+			}
+		});
+
+		let progressClass = classNames({
+			[`${styles['progress']}`]: true,
+			'bonusProgress': true
+		});
+
+		let progressValueClass = classNames({
+			[`${styles['progress-value']}`]: true,
+			'w-100 h-100 rounded-circle d-flex align-items-center justify-content-center': true
+		});
+
+		let progressBarLeft = classNames({
+			[`${styles['progress-bar']}`]: true,
+			'bonusProgressLeft border-bss': true
+		});
+
+		let progressBarRight = classNames({
+			[`${styles['progress-bar']}`]: true,
+			'bonusProgressRight border-bss': true
+		});
+
 		return (
 			<div>
 				<div className="os-tabs-w">
@@ -444,6 +502,58 @@ class Dashboard extends Component {
 						START - Bonus Tab
 						--------------------> */}
 						<div className="tab-pane fade" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
+
+							<div className="row">
+								<div className="col-12">
+									<form className="form-inline justify-content-sm-end">
+										<select className="form-control form-control-sm rounded" defaultValue="this">
+											<option value="this">
+												This Month
+											</option>
+											<option value="last">
+												Last Month
+											</option>
+											<option value="last-two">
+												Last 2 Months
+											</option>
+										</select>
+									</form>
+								</div>
+							</div>
+							<div className="gap-3"></div>
+
+							<div className="row">
+								<div className="col-4">
+
+									<div className="element-wrapper compact">
+										<div className="element-actions actions-only">
+											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
+										</div>
+										<h5 className="element-header">
+											Daily Bonus
+										</h5>
+										<div className="element-box-tp">
+											<div className={progressClass} data-value={this.state.prog}>
+												<span className={styles['progress-left']}>
+													<span className={progressBarLeft}></span>
+												</span>
+												<span className={styles['progress-right']}>
+													<span className={progressBarRight}></span>
+												</span>
+												<div className={progressValueClass}>
+													<div>{this.state.prog}<sup>%</sup></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+									
+								</div>
+								<div className="col-4"></div>
+								<div className="col-4"></div>
+							</div>
+
 							<div className="row">
 								<div className="col-12">
 									
@@ -587,8 +697,7 @@ class Dashboard extends Component {
 															<td className="text-center">
 																315 bets
 															</td>
-														</tr>
-														
+														</tr>										
 													</tbody>
 												</table>
 											</div>
