@@ -419,6 +419,7 @@ template {
  *
  ****************************/
 
+/* START: HELPERS */
 .gap, .gap-1, .gap-2, .gap-3, .gap-4, .gap-5 {
 	display: block;
 }
@@ -453,6 +454,10 @@ template {
 	border-color: #901d1d;
 }
 
+.btn-bss:hover {
+	color: #fff;
+}
+
 .color-bss {
 	color: #c02526;
 }
@@ -468,6 +473,16 @@ a.color-bss:hover {
 .no-link-effect {
 	text-decoration: none;
 }
+
+.fw300 {
+	font-weight: 300 !important;
+}
+
+.fw700 {
+	font-weight: 700 !important;
+}
+
+/* END: HELPERS */
 
 .bonus-table {
 	font-size: 20px;
@@ -508,6 +523,10 @@ a.color-bss:hover {
 
 .bss-info .el-tablo .value {
 	font-size: 2rem;
+}
+
+.bss-info .el-tablo.smaller .value {
+	font-size: 1rem;
 }
 
 .projects-list .project-head .project-title {
@@ -605,6 +624,10 @@ a.color-bss:hover {
 @media only screen and (max-width: 767px){
 	.bss-info .el-tablo .value {
 		font-size: 1.3rem !important;
+	}
+
+	.bss-info .el-tablo.smaller .value {
+		font-size: 0.8rem !important;
 	}
 
 	.projects-list .project-info.bss-info .el-tablo {

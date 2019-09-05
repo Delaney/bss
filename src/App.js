@@ -12,6 +12,7 @@ import StatusInTopbar from './components/StatusInTopbar';
 import PayToBabaIjebuForm from './components/sidebar/PayToBabaIjebuForm';
 import RegisterCashierForm from './components/sidebar/RegisterCashierForm';
 import QueryBetSlipForm from './components/sidebar/QueryBetSlipForm';
+import SuspendCashierForm from './components/sidebar/SuspendCashierForm';
 
 
 // import './App.css'
@@ -517,15 +518,7 @@ class App extends Component {
 										</div>								
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
-										<h6>Sports Bet</h6>
-										<div className="fancy-progress-with-label">
-											<div className="fpl-label">
-												65%
-											</div>
-											<div className="fpl-progress-w">
-												<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-											</div>
-										</div>
+										<SuspendCashierForm></SuspendCashierForm>
 									</div>
 								</div>
 

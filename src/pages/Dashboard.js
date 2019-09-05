@@ -9,16 +9,10 @@ class Dashboard extends Component {
 					<div className="os-tabs-controls os-tabs-complex">
 						<ul className="nav nav-tabs">
 							<li className="nav-item">
-								<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#overview">
-									<span className="tab-label">Overview</span>
+								<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#summary">
+									<span className="tab-label">Summary</span>
 								</a>
 							</li>
-							{/* <li className="nav-item">
-								<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#cashiers">
-									<span className="tab-label">Cashier Debt</span>
-									<span className="tab-value">₦7,839.23</span>
-								</a>
-							</li> */}
 							<li className="nav-item">
 								<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#bonus">
 									<span className="tab-label">Bonuses</span>
@@ -30,9 +24,9 @@ class Dashboard extends Component {
 					<div className="tab-content" id="myTabContent">
 
 						{/* <!--------------------
-						START - Overview Tab
+						START - Summary Tab
 						--------------------> */}
-						<div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+						<div className="tab-pane fade show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
 							
 							<div className="row">
 								<div className="col-12 col-sm-4 col-xxl-4">
@@ -41,32 +35,40 @@ class Dashboard extends Component {
 											<div className="project-head">
 												<div className="project-title">
 													<h5>
-														Debt Overview
+														Debt Summary
 													</h5>
 												</div>
 											</div>
 											<div className="project-info bss-info">
 												<div className="row align-items-center">
 													<div className="col-sm-12">
+
 														<div className="el-tablo centered highlight element-box">
-															<div className="">
+															<div className="fw700">
+																Due Debt
+															</div>
+															<div className="value fw700">
+																₦45,201,964
+															</div>
+														</div>
+														
+														<div className="gap d-none d-sm-block"></div>
+
+														<div className="gap-3 d-sm-none"></div>
+														
+														<div className="el-tablo centered highlight element-box trend-in-corner smaller">
+															<div className="fw300">
 																Total Debt
 															</div>
 															<div className="value">
 																₦130,391,955
 															</div>
-														</div>
-
-														<div className="gap-2"></div>
-
-														<div className="el-tablo centered highlight element-box">
-															<div className="">
-																Due Debt
-															</div>
-															<div className="value">
-																₦45,201,964
+															<div className="trending trending-up">
+																<span>12%</span>
+																<i className="os-icon os-icon-arrow-up6"></i>
 															</div>
 														</div>
+
 													</div>
 												</div>
 											</div>
@@ -87,23 +89,30 @@ class Dashboard extends Component {
 											<div className="project-info bss-info">
 												<div className="row align-items-center">
 													<div className="col-sm-12">
+														
 														<div className="el-tablo centered highlight element-box">
-															<div className="">
+															<div className="fw700">
+																Commission Balance
+															</div>
+															<div className="value fw700">
+																₦4,539,200
+															</div>
+														</div>
+
+														<div className="gap d-none d-sm-block"></div>
+
+														<div className="gap-3 d-sm-none"></div>
+														
+														<div className="el-tablo centered highlight element-box trend-in-corner smaller">
+															<div className="fw300">
 																This Week
 															</div>
 															<div className="value">
 																₦171,955
 															</div>
-														</div>
-
-														<div className="gap-2"></div>
-
-														<div className="el-tablo centered highlight element-box">
-															<div className="">
-																Commission Balance
-															</div>
-															<div className="value">
-																₦4,539,200
+															<div className="trending trending-down">
+																<span>12%</span>
+																<i className="os-icon os-icon-arrow-down6"></i>
 															</div>
 														</div>
 													</div>
@@ -127,7 +136,20 @@ class Dashboard extends Component {
 												<div className="row align-items-center">
 													<div className="col-sm-12">
 														<div className="el-tablo centered highlight element-box">
-															<div className="">
+															<div className="fw700">
+																Debt
+															</div>
+															<div className="value fw700">
+																₦39,200
+															</div>
+														</div>
+
+														<div className="gap d-none d-sm-block"></div>
+
+														<div className="gap-3 d-sm-none"></div>
+														
+														<div className="el-tablo centered highlight element-box trend-in-corner smaller">
+															<div className="fw300">
 																Active
 															</div>
 															<div className="value">
@@ -135,16 +157,6 @@ class Dashboard extends Component {
 															</div>
 														</div>
 
-														<div className="gap-2"></div>
-
-														<div className="el-tablo centered highlight element-box">
-															<div className="">
-																Debt
-															</div>
-															<div className="value">
-																₦39,200
-															</div>
-														</div>
 													</div>
 												</div>
 											</div>
@@ -154,7 +166,7 @@ class Dashboard extends Component {
 
 							</div>
 
-							<div className="row">
+							{/* <div className="row">
 								<div className="col-12 col-sm-12 col-xxl-12">
 									<div className="projects-list text-center">
 										<div className="project-box">
@@ -207,7 +219,7 @@ class Dashboard extends Component {
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> */}
 						
 							<div className="row">
 								<div className="col-sm-12">
@@ -220,7 +232,7 @@ class Dashboard extends Component {
 												<div className="row">
 													<div className="col-sm-6">
 														<a className="btn btn-sm btn-dark" href="# ">Add Cashier</a>
-														<a className="btn btn-sm btn-danger" href="# ">Delete</a>
+														<a className="btn btn-sm btn-bss" href="# ">Delete</a>
 													</div>
 													<div className="col-sm-6">
 														<form className="form-inline justify-content-sm-end">
@@ -229,13 +241,10 @@ class Dashboard extends Component {
 																<option value="">
 																	Select Status
 																</option>
-																<option value="Pending">
-																	Pending
-																</option>
 																<option value="Active">
 																	Active
 																</option>
-																<option value="Cancelled">
+																<option value="Suspended">
 																	Cancelled
 																</option>
 															</select>
