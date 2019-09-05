@@ -955,13 +955,16 @@ $(function () {
 		$wrapper.find('.element-box-tp, .element-box').toggle(200);
 		var $icon = $(this).find('i');
 
-		if ($wrapper.hasClass('folded')) {
-			$icon.removeClass('os-icon-plus-circle').addClass('os-icon-minus-circle');
-			$wrapper.removeClass('folded');
-		} else {
-			$icon.removeClass('os-icon-minus-circle').addClass('os-icon-plus-circle');
-			$wrapper.addClass('folded');
+		if(!($($icon).hasClass('untouchable'))){
+			if ($wrapper.hasClass('folded')) {
+				$icon.removeClass('os-icon-plus-circle').addClass('os-icon-minus-circle');
+				$wrapper.removeClass('folded');
+			} else {
+				$icon.removeClass('os-icon-minus-circle').addClass('os-icon-plus-circle');
+				$wrapper.addClass('folded');
+			}
 		}
+
 		return false;
 	});
 });

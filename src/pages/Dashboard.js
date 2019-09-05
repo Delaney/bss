@@ -67,12 +67,12 @@ class Dashboard extends Component {
 					<div className="os-tabs-controls os-tabs-complex">
 						<ul className="nav nav-tabs">
 							<li className="nav-item">
-								<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#summary">
+								<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#summary">
 									<span className="tab-label">Summary</span>
 								</a>
 							</li>
 							<li className="nav-item">
-								<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#bonus">
+								<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#bonus">
 									<span className="tab-label">Bonuses</span>
 								</a>
 							</li>
@@ -84,7 +84,7 @@ class Dashboard extends Component {
 						{/* <!--------------------
 						START - Summary Tab
 						--------------------> */}
-						<div className="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+						<div className="tab-pane fade show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
 							
 							<div className="row">
 								<div className="col-12 col-sm-4 col-xxl-4">
@@ -446,7 +446,7 @@ class Dashboard extends Component {
 						{/* <!--------------------
 						START - Bonus Tab
 						--------------------> */}
-						<div className="tab-pane fade show active" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
+						<div className="tab-pane fade" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
 
 							<div className="row">
 								<div className="col-12">

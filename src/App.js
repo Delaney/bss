@@ -61,8 +61,6 @@ class App extends Component {
 	componentDidMount(){
 		$(function(){
 			$(".fpl-progress-i").each(function() {
-				console.log(this);
-				console.log($(this).css('width'));
 				let width = $(this).css('width');
 
 				if (width === "100%"){
@@ -313,7 +311,7 @@ class App extends Component {
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Deposit straight to Baba Ijebu from here!</p>
 										<div className="element-icon element-action element-action-fold">
-											<i className="entypo-icon-credit-card"></i>
+											<i className="untouchable entypo-icon-credit-card"></i>
 										</div>
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
@@ -328,7 +326,7 @@ class App extends Component {
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">View recent sales history</p>
 										<div className="element-icon element-action element-action-fold">
-											<i className="entypo-icon-text-document"></i>
+											<i className="untouchable entypo-icon-text-document"></i>
 										</div>									
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
@@ -475,7 +473,7 @@ class App extends Component {
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Keep track of bonuses</p>
 										<div className="element-icon element-action element-action-fold">
-											<i className="entypo-icon-thumbs-up"></i>
+											<i className="untouchable entypo-icon-thumbs-up"></i>
 										</div>								
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
@@ -527,7 +525,7 @@ class App extends Component {
 											Register a Cashier
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon element-action element-action-fold">
-											<i className="entypo-icon-add-user"></i>
+											<i className="untouchable entypo-icon-add-user"></i>
 										</div>							
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
@@ -541,7 +539,7 @@ class App extends Component {
 											Suspend a Cashier
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon element-action element-action-fold">
-											<i className="entypo-icon-uninstall"></i>
+											<i className="untouchable entypo-icon-uninstall"></i>
 										</div>								
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
@@ -555,7 +553,7 @@ class App extends Component {
 											Query Betslip
 										</h6>
 										<p className="element-sub-header element-action element-action-fold">Quick registration</p>	<div className="element-icon element-action element-action-fold">
-											<i className="entypo-icon-news"></i>
+											<i className="untouchable entypo-icon-news"></i>
 										</div>								
 									</div>
 									<div className="element-box-tp" style={{display: 'none'}}>
