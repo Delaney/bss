@@ -7,7 +7,10 @@ import styles from './styles/Dashboard.module.css';
 class Dashboard extends Component {
 	
 	state = {
-		prog: Math.floor(Math.random() * 100) + 1
+		prog1: Math.floor(Math.random() * 100) + 1,
+		prog2: Math.floor(Math.random() * 100) + 1,
+		prog3: Math.floor(Math.random() * 100) + 1,
+		prog4: Math.floor(Math.random() * 100) + 1
 	}
 
 	render() {
@@ -32,7 +35,8 @@ class Dashboard extends Component {
 				}
 
 				if (value >= 100) {
-					$('.bonusProgressLeft, .bonusProgressRight').removeClass('border-bss').addClass('border-success');
+					right.removeClass('border-bss').addClass('border-success');
+					left.removeClass('border-bss').addClass('border-success');
 				}
 			});
 
@@ -67,12 +71,12 @@ class Dashboard extends Component {
 					<div className="os-tabs-controls os-tabs-complex">
 						<ul className="nav nav-tabs">
 							<li className="nav-item">
-								<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#summary">
+								<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#summary">
 									<span className="tab-label">Summary</span>
 								</a>
 							</li>
 							<li className="nav-item">
-								<a aria-expanded="false" className="nav-link" data-toggle="tab" href="#bonus">
+								<a aria-expanded="false" className="nav-link active" data-toggle="tab" href="#bonus">
 									<span className="tab-label">Bonuses</span>
 								</a>
 							</li>
@@ -84,7 +88,7 @@ class Dashboard extends Component {
 						{/* <!--------------------
 						START - Summary Tab
 						--------------------> */}
-						<div className="tab-pane fade show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+						<div className="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
 							
 							<div className="row">
 								<div className="col-12 col-sm-4 col-xxl-4">
@@ -501,7 +505,7 @@ class Dashboard extends Component {
 						{/* <!--------------------
 						START - Bonus Tab
 						--------------------> */}
-						<div className="tab-pane fade" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
+						<div className="tab-pane fade show active" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
 
 							<div className="row">
 								<div className="col-12">
@@ -523,791 +527,134 @@ class Dashboard extends Component {
 							<div className="gap-3"></div>
 
 							<div className="row">
-								<div className="col-4">
 
-									<div className="element-wrapper compact">
-										<div className="element-actions actions-only">
-											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-										</div>
-										<h5 className="element-header">
-											Daily Bonus
-										</h5>
-										<div className="element-box-tp">
-											<div className={progressClass} data-value={this.state.prog}>
-												<span className={styles['progress-left']}>
-													<span className={progressBarLeft}></span>
-												</span>
-												<span className={styles['progress-right']}>
-													<span className={progressBarRight}></span>
-												</span>
-												<div className={progressValueClass}>
-													<div>{this.state.prog}<sup>%</sup></div>
+								<div className="col-12 col-sm-4 col-xxl-4">
+									<a className="no-link-effect" href="# ">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Daily Bonus
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className={progressClass} data-value={this.state.prog1}>
+															<span className={styles['progress-left']}>
+																<span className={progressBarLeft}></span>
+															</span>
+															<span className={styles['progress-right']}>
+																<span className={progressBarRight}></span>
+															</span>
+															<div className={progressValueClass}>
+																<div>{this.state.prog1}<sup>%</sup></div>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-
-
-									
+									</a>
 								</div>
-								<div className="col-4"></div>
-								<div className="col-4"></div>
-							</div>
 
-							<div className="row">
-								<div className="col-12">
-									
-									<div className="element-wrapper compact folded w-100">
-										<div className="element-actions actions-only">
-											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-										</div>
-										<h5 className="element-header">
-											Daily Bonus
-										</h5>
-										<div className="element-box-tp" style={{display: 'none'}}>
-
-											{/* <!--------------------
-											START - Daily Bonus Table
-											---------------------> */}
-											<div className="table-responsive">
-												<table className="table table-lg table-v2 table-striped bonus-table">
-													<tbody>
-														<tr>
-															<td className="text-center">
-																Today
-															</td>
-															<td>
-																<strong>33%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '33%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																101 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Wednesday
-															</td>
-															<td>
-																<strong>65%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																195 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Tuesday
-															</td>
-															<td>
-																<strong>0%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '0%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																0 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Monday
-															</td>
-															<td>
-																<strong>120%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																360 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Sunday
-															</td>
-															<td>
-																<strong>50%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '50%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																150 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Saturday
-															</td>
-															<td>
-																<strong>259%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																758 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Friday
-															</td>
-															<td>
-																<strong>105%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																315 bets
-															</td>
-														</tr>										
-													</tbody>
-												</table>
+								<div className="col-12 col-sm-4 col-xxl-4">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Lotto Bonus
+													</h5>
+												</div>
 											</div>
-											{/* <!--------------------
-											END - Daily Bonus table
-											---------------------> */}
-										</div>
-									</div>
-									<div className="element-wrapper compact folded w-100">
-										<div className="element-actions actions-only">
-											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-										</div>
-										<h5 className="element-header">
-											Sports Bet
-										</h5>
-										<div className="element-box-tp" style={{display: 'none'}}>
-
-											{/* <!--------------------
-											START - Sports Bet Bonus Table
-											---------------------> */}
-											<div className="table-responsive">
-												<table className="table table-lg table-v2 table-striped bonus-table">
-													<tbody>
-														<tr>
-															<td className="text-center">
-																Today
-															</td>
-															<td>
-																<strong>33%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '33%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																101 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Wednesday
-															</td>
-															<td>
-																<strong>65%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																195 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Tuesday
-															</td>
-															<td>
-																<strong>0%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '0%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																0 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Monday
-															</td>
-															<td>
-																<strong>120%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																360 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Sunday
-															</td>
-															<td>
-																<strong>50%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '50%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																150 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Saturday
-															</td>
-															<td>
-																<strong>259%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																758 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Friday
-															</td>
-															<td>
-																<strong>105%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																315 bets
-															</td>
-														</tr>
-														
-													</tbody>
-												</table>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className={progressClass} data-value={this.state.prog2}>
+															<span className={styles['progress-left']}>
+																<span className={progressBarLeft}></span>
+															</span>
+															<span className={styles['progress-right']}>
+																<span className={progressBarRight}></span>
+															</span>
+															<div className={progressValueClass}>
+																<div>{this.state.prog2}<sup>%</sup></div>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
-											{/* <!--------------------
-											END - Sports Bet Bonus table
-											---------------------> */}
-										</div>
-									</div>
-									<div className="element-wrapper compact folded w-100">
-										<div className="element-actions actions-only">
-											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-										</div>
-										<h5 className="element-header">
-											Lotto Bonus
-										</h5>
-										<div className="element-box-tp" style={{display: 'none'}}>
-
-											{/* <!--------------------
-											START - Lotto Bonus Table
-											---------------------> */}
-											<div className="table-responsive">
-												<table className="table table-lg table-v2 table-striped bonus-table">
-													<tbody>
-														<tr>
-															<td className="text-center">
-																Today
-															</td>
-															<td>
-																<strong>33%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '33%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																101 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Wednesday
-															</td>
-															<td>
-																<strong>65%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																195 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Tuesday
-															</td>
-															<td>
-																<strong>0%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '0%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																0 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Monday
-															</td>
-															<td>
-																<strong>120%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																360 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Sunday
-															</td>
-															<td>
-																<strong>50%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '50%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																150 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Saturday
-															</td>
-															<td>
-																<strong>259%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																758 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Friday
-															</td>
-															<td>
-																<strong>105%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																315 bets
-															</td>
-														</tr>
-														
-													</tbody>
-												</table>
-											</div>
-											{/* <!--------------------
-											END - Lotto Bonus table
-											---------------------> */}
-										</div>
-									</div>
-									<div className="element-wrapper compact folded w-100">
-										<div className="element-actions actions-only">
-											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-										</div>
-										<h5 className="element-header">
-											Virtuals Bonus
-										</h5>
-										<div className="element-box-tp" style={{display: 'none'}}>
-
-											{/* <!--------------------
-											START - Virtuals Bonus Table
-											---------------------> */}
-											<div className="table-responsive">
-												<table className="table table-lg table-v2 table-striped bonus-table">
-													<tbody>
-														<tr>
-															<td className="text-center">
-																Today
-															</td>
-															<td>
-																<strong>33%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '33%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																101 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Wednesday
-															</td>
-															<td>
-																<strong>65%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																195 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Tuesday
-															</td>
-															<td>
-																<strong>0%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '0%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																0 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Monday
-															</td>
-															<td>
-																<strong>120%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																360 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Sunday
-															</td>
-															<td>
-																<strong>50%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '50%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																150 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Saturday
-															</td>
-															<td>
-																<strong>259%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																758 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Friday
-															</td>
-															<td>
-																<strong>105%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																315 bets
-															</td>
-														</tr>
-														
-													</tbody>
-												</table>
-											</div>
-											{/* <!--------------------
-											END - Virtuals Bonus table
-											---------------------> */}
-										</div>
-									</div>
-									<div className="element-wrapper compact folded w-100">
-										<div className="element-actions actions-only">
-											<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-										</div>
-										<h5 className="element-header">
-											Specials Bonus
-										</h5>
-										<div className="element-box-tp" style={{display: 'none'}}>
-
-											{/* <!--------------------
-											START - Specials Bonus Table
-											---------------------> */}
-											<div className="table-responsive">
-												<table className="table table-lg table-v2 table-striped bonus-table">
-													<tbody>
-														<tr>
-															<td className="text-center">
-																Today
-															</td>
-															<td>
-																<strong>33%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '33%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																101 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Wednesday
-															</td>
-															<td>
-																<strong>65%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '65%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																195 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Tuesday
-															</td>
-															<td>
-																<strong>0%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '0%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																0 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Monday
-															</td>
-															<td>
-																<strong>120%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																360 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Sunday
-															</td>
-															<td>
-																<strong>50%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '50%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																150 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Saturday
-															</td>
-															<td>
-																<strong>259%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																758 bets
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																Friday
-															</td>
-															<td>
-																<strong>105%</strong>
-															</td>
-															<td className="text-center">
-																<div className="fancy-progress-with-label">
-																	<div className="fpl-progress-w">
-																		<div className="fpl-progress-i" style={{ width: '100%' }}></div>
-																	</div>
-																</div>
-															</td>
-															<td className="text-center">
-																315 bets
-															</td>
-														</tr>
-														
-													</tbody>
-												</table>
-											</div>
-											{/* <!--------------------
-											END - Specials Bonus table
-											---------------------> */}
 										</div>
 									</div>
 								</div>
+
+								<div className="col-12 col-sm-4 col-xxl-4">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Sports Bonus
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className={progressClass} data-value="100">
+															<span className={styles['progress-left']}>
+																<span className={progressBarLeft}></span>
+															</span>
+															<span className={styles['progress-right']}>
+																<span className={progressBarRight}></span>
+															</span>
+															<div className={progressValueClass}>
+																<div>100<sup>%</sup></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								{/* <div className="col-12 col-sm-4 col-xxl-4">
+									<div className="projects-list text-center">
+										<div className="project-box">
+											<div className="project-head">
+												<div className="project-title">
+													<h5>
+														Virtuals Bonus
+													</h5>
+												</div>
+											</div>
+											<div className="project-info bss-info">
+												<div className="row align-items-center">
+													<div className="col-sm-12">
+														<div className={progressClass} data-value={this.state.prog4}>
+															<span className={styles['progress-left']}>
+																<span className={progressBarLeft}></span>
+															</span>
+															<span className={styles['progress-right']}>
+																<span className={progressBarRight}></span>
+															</span>
+															<div className={progressValueClass}>
+																<div>{this.state.prog4}<sup>%</sup></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> */}
 							</div>
+
 						</div>
 						{/* <!--------------------
 						END - Bonus Tab
