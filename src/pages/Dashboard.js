@@ -16,9 +16,9 @@ class Dashboard extends Component {
 	}
 
 	bonusModal(e) {
-		console.log("Bonusing");
-		console.log(e);
-		console.log(e.target.dataset.bonus);
+		this.setState({
+			bonus: e.currentTarget.dataset.bonus
+		});
 	};
 
 	render() {
@@ -584,7 +584,7 @@ class Dashboard extends Component {
 							START - Bonus Modal
 							---------------------> */}										
 							<div aria-hidden="true" className="onboarding-modal modal fade" id="bonusModal" role="dialog" tabIndex="-1">
-								<div className="modal-dialog modal-centered" role="document">
+								<div className="modal-dialog modal-centered modal-lg" role="document">
 									<div className="modal-content text-center">
 										<button aria-label="Close" className="close" data-dismiss="modal" type="button">
 											<span className="os-icon os-icon-close"></span>
@@ -596,13 +596,7 @@ class Dashboard extends Component {
 											<div className="row">
 												<div className="col-12">
 													
-													<div className="element-wrapper compact w-100">
-														<div className="element-actions actions-only">
-															<a className="element-action element-action-fold" href="# "><i className="os-icon os-icon-plus-circle"></i></a>
-														</div>
-														<h5 className="element-header">
-															Daily Bonus
-														</h5>
+													<div className="element-wrapper w-100">
 														<div className="element-box-tp">
 
 															<div className="row">
