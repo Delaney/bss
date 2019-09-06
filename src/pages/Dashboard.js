@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import $ from 'jquery';
+import * as helpers from 'helpers-of-js';
 
 import styles from './styles/Dashboard.module.css';
 
@@ -10,12 +11,22 @@ class Dashboard extends Component {
 		prog1: Math.floor(Math.random() * 100) + 1,
 		prog2: Math.floor(Math.random() * 100) + 1,
 		prog3: Math.floor(Math.random() * 100) + 1,
-		prog4: Math.floor(Math.random() * 100) + 1
+		prog4: Math.floor(Math.random() * 100) + 1,
+		bonus: ''
 	}
+
+	bonusModal(e) {
+		console.log("Bonusing");
+		console.log(e);
+		console.log(e.target.dataset.bonus);
+	};
 
 	render() {
 
+		
 		$(function() {
+			helpers.matchHeight('.projects-list.bss-list .project-head');
+			
 			$(".bonusProgress").each(function() {
 				var value = $(this).attr('data-value');
 				var left = $(this).find('.bonusProgressLeft');
@@ -88,7 +99,7 @@ class Dashboard extends Component {
 							
 							<div className="row">
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<div className="projects-list text-center">
+									<div className="projects-list bss-list text-center">
 										<div className="project-box">
 											<div className="project-head">
 												<div className="project-title">
@@ -135,7 +146,7 @@ class Dashboard extends Component {
 								</div>
 
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<div className="projects-list text-center">
+									<div className="projects-list bss-list text-center">
 										<div className="project-box">
 											<div className="project-head">
 												<div className="project-title">
@@ -181,7 +192,7 @@ class Dashboard extends Component {
 								</div>
 							
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<div className="projects-list text-center">
+									<div className="projects-list bss-list text-center">
 										<div className="project-box">
 											<div className="project-head">
 												<div className="project-title">
@@ -269,7 +280,7 @@ class Dashboard extends Component {
 															<th>
 																Cashier Name
 															</th>
-															<th>
+															<th className="text-right">
 																Debt
 															</th>
 															<th>
@@ -285,7 +296,7 @@ class Dashboard extends Component {
 															<td className="text-center">
 																<input className="form-control" type="checkbox" />
 															</td>
-															<td>
+															<td className="text-center">
 																John Mayers
 															</td>
 															<td className="text-right">
@@ -303,7 +314,7 @@ class Dashboard extends Component {
 															<td className="text-center">
 																<input className="form-control" type="checkbox" />
 															</td>
-															<td>
+															<td className="text-center">
 																John Mayers
 															</td>
 															<td className="text-right">
@@ -321,7 +332,7 @@ class Dashboard extends Component {
 															<td className="text-center">
 																<input className="form-control" type="checkbox" />
 															</td>
-															<td>
+															<td className="text-center">
 																John Mayers
 															</td>
 															<td className="text-right">
@@ -339,7 +350,7 @@ class Dashboard extends Component {
 															<td className="text-center">
 																<input className="form-control" type="checkbox" />
 															</td>
-															<td>
+															<td className="text-center">
 																John Mayers
 															</td>
 															<td className="text-right">
@@ -357,7 +368,7 @@ class Dashboard extends Component {
 															<td className="text-center">
 																<input className="form-control" type="checkbox" />
 															</td>
-															<td>
+															<td className="text-center">
 																John Mayers
 															</td>
 															<td className="text-right">
@@ -382,7 +393,7 @@ class Dashboard extends Component {
 											START - Fund Cashier modal
 											---------------------> */}										
 											<div aria-hidden="true" className="onboarding-modal modal fade" id="onboardingFormModal" role="dialog" tabIndex="-1">
-												<div className="modal-dialog modal-centered" role="document">
+												<div className="modal-dialog modal-centered modal-lg" role="document">
 													<div className="modal-content text-center">
 														<button aria-label="Close" className="close" data-dismiss="modal" type="button">
 															<span className="close-label">Skip Intro</span>
@@ -470,7 +481,7 @@ class Dashboard extends Component {
 							<div className="row">
 
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<a className="no-link-effect color-black bonus-modal-trigger" href="# " data-target="#bonusModal" data-toggle="modal" data-bonus="Daily Bonus">
+									<a className="no-link-effect color-black" onClick={(e) => this.bonusModal(e)} href="# " data-target="#bonusModal" data-toggle="modal" data-bonus="Daily Bonus">
 										<div className="projects-list text-center">
 											<div className="project-box">
 												<div className="project-head">
@@ -491,7 +502,7 @@ class Dashboard extends Component {
 																	<span className={progressBarRight}></span>
 																</span>
 																<div className={progressValueClass}>
-																	<div className="h4 font-weight-bold">{this.state.prog1}<sup className="small">%</sup></div>
+																	<div className="h4 font-weight-bold">{this.state.prog1}<sup className="smaller">%</sup></div>
 																</div>
 															</div>
 														</div>
@@ -503,7 +514,7 @@ class Dashboard extends Component {
 								</div>
 
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<a className="no-link-effect color-black bonus-modal-trigger" href="# " data-target="#bonusModal" data-toggle="modal" data-bonus="Lotto Bonus">
+									<a className="no-link-effect color-black" onClick={(e) => this.bonusModal(e)} href="# " data-target="#bonusModal" data-toggle="modal" data-bonus="Lotto Bonus">
 										<div className="projects-list text-center">
 											<div className="project-box">
 												<div className="project-head">
@@ -524,7 +535,7 @@ class Dashboard extends Component {
 																	<span className={progressBarRight}></span>
 																</span>
 																<div className={progressValueClass}>
-																	<div className="h4 font-weight-bold">{this.state.prog2}<sup className="small">%</sup></div>
+																	<div className="h4 font-weight-bold">{this.state.prog2}<sup className="smaller">%</sup></div>
 																</div>
 															</div>
 														</div>
@@ -536,7 +547,7 @@ class Dashboard extends Component {
 								</div>
 
 								<div className="col-12 col-sm-4 col-xxl-4">
-									<a className="no-link-effect color-black bonus-modal-trigger" href="# " data-target="#bonusModal" data-toggle="modal" data-bonus="Sports Bonus">
+									<a className="no-link-effect color-black" onClick={(e) => this.bonusModal(e)} href="# " data-target="#bonusModal" data-toggle="modal" data-bonus="Sports Bonus">
 										<div className="projects-list text-center">
 											<div className="project-box">
 												<div className="project-head">
@@ -557,7 +568,7 @@ class Dashboard extends Component {
 																	<span className={progressBarRight}></span>
 																</span>
 																<div className={progressValueClass}>
-																	<div className="h4 font-weight-bold">100<sup className="small">%</sup></div>
+																	<div className="h4 font-weight-bold">100<sup className="smaller">%</sup></div>
 																</div>
 															</div>
 														</div>
@@ -580,7 +591,7 @@ class Dashboard extends Component {
 										</button>
 										<div className="onboarding-content with-gradient">
 											<h4 className="onboarding-title">
-												Fund Cashier Wallet
+												{this.state.bonus}
 											</h4>
 											<div className="row">
 												<div className="col-12">

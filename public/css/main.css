@@ -478,6 +478,12 @@ a.color-bss:hover {
 	text-decoration: none;
 }
 
+.smaller {
+	font-size: 60%;
+    font-weight: 300;
+    vertical-align: super;
+}
+
 /* END: HELPERS */
 
 .bonus-table {
@@ -545,6 +551,10 @@ a.color-bss:hover {
 	border: none;
 	padding: 0;
 	line-height: 24px;
+}
+
+.bss-panel .element-wrapper .element-sub-header {
+	max-width: 150px;
 }
 
 .bss-panel .element-wrapper .element-header,
@@ -620,6 +630,10 @@ a.color-bss:hover {
 
 	.bss-info .el-tablo.smaller .value {
 		font-size: 0.8rem !important;
+	}
+
+	.projects-list.bss-list .project-head {
+		padding: 30px 10px;
 	}
 
 	.projects-list .project-info.bss-info .el-tablo {
