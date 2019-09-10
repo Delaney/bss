@@ -224,6 +224,9 @@ class Dashboard extends Component {
 															<div className="value font-weight-light">
 																11
 															</div>
+															<div className="trending trending-same">
+																<span>0%</span>
+															</div>
 														</div>
 
 													</div>

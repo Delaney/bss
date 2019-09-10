@@ -16246,6 +16246,11 @@ body.menu-side-right .layout-w {
 	background-color: #e65252;
 }
 
+.el-tablo .trending-same {
+	color: #fff;
+	background-color: #444;
+}
+
 .el-tablo .trending-up-basic {
 	color: #24b314;
 	padding: 0px;
