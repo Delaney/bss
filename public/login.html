@@ -23,7 +23,7 @@
 	<body class="auth-wrapper">
 		<div class="all-wrapper menu-side with-pattern">
 			<div class="auth-box-w">
-				<div class="logo-w">
+				<div class="logo-w" style="padding: 10%;">
 					<a href="index.html"><img alt="" src="img/premier-bet-logo-small.png" width="100"></a>
 				</div>
 				<h4 class="auth-header">
@@ -83,30 +83,16 @@
 							localStorage.setItem('agent', JSON.stringify(agent));
 							window.location.href = "/";
 						}).fail(error => {
+							$('#loginBtn').html("Log In").attr('disabled', false);
 							if (error.status == 401){
-								$('#loginBtn').html("Log In").attr('disabled', false);
 								$('#errorMessage').html("Your username or password is incorrect");
 							} else {
 								$('#errorMessage').html("Something went wrong. Please try again");
 							}
 						});
-						
-						// => response.data).then((data) => {
-						// 	console.log(data);
-						// 	$('#loginBtn').html("Log In").attr('disabled', false);
-						// 	$('#successMessage').html("Login successful. Redirecting...");
-						// 	let agent = {
-						// 		SessionID: data.SessionID,
-						// 		Username: data.Username
-						// 	};
-						// 	localStorage.setItem('agent', JSON.stringify(agent));
-						// 	window.location.href = "/";
-						// }).catch(function (error) {
-						// 	if (error.response.status === 401){
-						// 		$('#loginBtn').html("Log In").attr('disabled', false);
-						// 		$('#errorMessage').html("Your username or password is incorrect");
-						// 	}
-						// });
+					}).fail(fail => {
+						$('#loginBtn').html("Log In").attr('disabled', false);
+						$('#errorMessage').html("Something went wrong. Please try again");
 					});
 				}
 			};

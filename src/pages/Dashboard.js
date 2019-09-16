@@ -17,23 +17,34 @@ class Dashboard extends Component {
 			prog2: Math.floor(Math.random() * 100) + 1,
 			prog3: Math.floor(Math.random() * 100) + 1,
 			prog4: Math.floor(Math.random() * 100) + 1,
-			bonus: ''
+			bonus: '',
+			loading: false,
+			currentDebt: '',
+			dueDebt: '',
+			commissionThisWeek: '',
+			commissionBalance: '',
+			cashierDebt: '',
+			cashierNo: '',
+			cashierList: []
 		}
 	}
 	
 
-	// componentDidMount(){
-		
-	// 	const url = process.env.REACT_APP_API_URL;
+	componentDidMount(){
+		this.props.setLoad(true);
+		const url = process.env.REACT_APP_API_URL;
 
-	// 	let req = {
-	// 		SessionID: this.state.user.SessionID
-	// 	}
+		let req = {
+			SessionID: this.state.user.SessionID,
+			Type: "ALL"
+		}
 
-	// 	axios.post(`${url}/bss`, req, (response => {
-	// 		console.log(response);
-	// 	}));
-	// }
+		axios.post(`${url}/bss`, req).then(response => {
+			console.log(response.data);
+			console.log(response.data.filter(obj => obj.NAME === "NO_OF_CASHIER")[0].VALUE);
+			this.props.setLoad(false);
+		});
+	}
 
 	bonusModal(e) {
 		this.setState({

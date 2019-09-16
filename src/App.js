@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
-import axios from 'axios'
+// import axios from 'axios'
 
 /* Pages */
 import Dashboard from './pages/Dashboard';
@@ -66,10 +66,19 @@ class App extends Component {
 		this.setState();
 	}
 
+	loading(val){
+		document.getElementById('loading_page').className = val ? "on" : "";
+	}
+
 	render() {
 		const username = this.state.user.Username;
 		return (
 			<div className="all-wrapper with-side-panel solid-bg-all">
+				<div id="loading_page">
+					<div>
+						<img className="hvr-pulse" src="img/premier-bet-logo-small.png" alt=""/>
+					</div>
+				</div>
 				<div className="layout-w">
 
 					{/* <!--------------------
@@ -287,7 +296,7 @@ class App extends Component {
 										<Route
 											exact path="/"
 											render={(props) =>
-												localStorage.getItem('agent') ? <Dashboard {...props} user={JSON.parse(localStorage.getItem('agent'))}/> : window.location.href="/login.html" } />
+												localStorage.getItem('agent') ? <Dashboard {...props} setLoad={this.loading} user={JSON.parse(localStorage.getItem('agent'))}/> : window.location.href="/login.html" } />
 										} />
 									</Switch>
 								</BrowserRouter>

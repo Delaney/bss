@@ -486,6 +486,36 @@ a.color-bss:hover {
 
 /* END: HELPERS */
 
+#loading_page, #loading_page.on {
+	transition: all 0.3s linear;
+}
+
+#loading_page {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    z-index: 55;
+    width: 100%;
+    height: 100%;
+	background: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#loading_page.on {
+	visibility: visible;
+	opacity: 1;
+}
+
+#loading_page > div {
+	position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 40%;
+}
+
 .bonus-table {
 	font-size: 20px;
 }
