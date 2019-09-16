@@ -23,6 +23,7 @@ class Dashboard extends Component {
 
 	render() {
 
+		helpers.el('body').className = "menu-position-side menu-side-left full-screen-with-content-panel full-screen";
 		
 		$(function() {
 			helpers.matchHeight('.projects-list.bss-list .project-head');
