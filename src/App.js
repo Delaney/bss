@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
-import PropTypes from 'prop-types';
-// import axios from 'axios'
+import axios from 'axios'
 
 /* Pages */
 import Dashboard from './pages/Dashboard';
-import Login from './pages/Login';
 
 /* Components */
 import StatusInTopbar from './components/StatusInTopbar';
@@ -17,21 +15,6 @@ import RegisterCashierForm from './components/sidebar/RegisterCashierForm';
 import QueryBetSlipForm from './components/sidebar/QueryBetSlipForm';
 import SuspendCashierForm from './components/sidebar/SuspendCashierForm';
 
-
-// import './App.css'
-
-// class App extends Component {
-// 	state = {
-// 		data: [],
-// 		users: []
-// 	}
-// 	componentDidMount(){
-// 		const url = `${API_URL}/users/`
-// 		axios.get(url).then(response => response.data).then((data) => {
-// 			this.setState({ users: data })
-// 			console.log(this.state.users)
-// 		})
-// 	}
 // 	render() {
 // 		return (
 // 			<div className="App">
@@ -57,17 +40,12 @@ import SuspendCashierForm from './components/sidebar/SuspendCashierForm';
 
 class App extends Component {
 	
-	constructor(props) {
-		super(props);
-
-		console.log(props.agent);
-		
-		this.state = {
-			user: {},
-			stat: Math.floor(Math.random() * 100) % 2
-		}
+	state = {
+		user: JSON.parse(localStorage.getItem('agent')),
+		stat: Math.floor(Math.random() * 100) % 2
 	}
 
+	
 	componentDidMount(){
 		$(function(){
 			$(".fpl-progress-i").each(function() {
@@ -83,7 +61,13 @@ class App extends Component {
 		});
 	}
 
+	logout(){
+		localStorage.removeItem('agent');
+		this.setState();
+	}
+
 	render() {
+		const username = this.state.user.Username;
 		return (
 			<div className="all-wrapper with-side-panel solid-bg-all">
 				<div className="layout-w">
@@ -112,11 +96,11 @@ class App extends Component {
 								</div>
 								<div className="logged-user-info-w">
 									<div className="logged-user-name">
-										Maria Gomez
+										{username}
 									</div>
-									<div className="logged-user-role">
+									{/* <div className="logged-user-role">
 										Administrator
-									</div>
+									</div> */}
 								</div>
 							</div>
 						</div>
@@ -242,11 +226,11 @@ class App extends Component {
 												</div>
 												<div className="logged-user-info-w">
 													<div className="logged-user-name">
-														Maria Gomez
+														{username}
 													</div>
-													<div className="logged-user-role">
+													{/* <div className="logged-user-role">
 														Administrator
-													</div>
+													</div> */}
 												</div>
 											</div>
 											<div className="bg-icon">
@@ -266,7 +250,7 @@ class App extends Component {
 													<a href="# "><i className="os-icon os-icon-others-43"></i><span>Notifications</span></a>
 												</li>
 												<li>
-													<a href="# "><i className="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+													<a href="# " onClick={this.logout}><i className="os-icon os-icon-signs-11"></i><span>Logout</span></a>
 												</li>
 											</ul>
 										</div>
@@ -297,7 +281,14 @@ class App extends Component {
 								-------------------->*/}
 								<BrowserRouter>
 									<Switch>
-										<Route exact path="/" component={localStorage.getItem('agent') ? Dashboard : Login} />
+										{/* <Route exact path="/" component={
+											localStorage.getItem('agent') ? Dashboard : window.location.href="/login.html" } />
+										} /> */}
+										<Route
+											exact path="/"
+											render={(props) =>
+												localStorage.getItem('agent') ? <Dashboard {...props} user={JSON.parse(localStorage.getItem('agent'))}/> : window.location.href="/login.html" } />
+										} />
 									</Switch>
 								</BrowserRouter>
 								{/* <!--------------------

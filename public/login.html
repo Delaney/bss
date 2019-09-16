@@ -24,7 +24,7 @@
 		<div class="all-wrapper menu-side with-pattern">
 			<div class="auth-box-w">
 				<div class="logo-w">
-					<a href="index.html"><img alt="" src="img/premier-bet-logo-small.png"></a>
+					<a href="index.html"><img alt="" src="img/premier-bet-logo-small.png" width="100"></a>
 				</div>
 				<h4 class="auth-header">
 					Premier Lotto
@@ -32,17 +32,24 @@
 				<form action="" id="loginForm">
 					<div class="form-group">
 						<label for="">Username</label><input class="form-control" placeholder="Enter your username" type="text" id="username">
+						<div class="invalid-feedback">
+							Please enter your username
+						</div>
 						<div class="pre-icon os-icon os-icon-user-male-circle"></div>
 					</div>
 					<div class="form-group">
 						<label for="">Password</label><input class="form-control" placeholder="Enter your password" type="password" id="password">
+						<div class="invalid-feedback">
+							Please enter your password
+						</div>
 						<div class="pre-icon os-icon os-icon-fingerprint"></div>
 					</div>
+					<div className="form-group">
+						<div id="errorMessage" class="text-danger"></div>
+						<div id="successMessage"></div>
+					</div>
 					<div class="buttons-w">
-						<button class="btn btn-bss">Log In</button>
-						<!-- <div class="form-check-inline">
-							<label class="form-check-label"><input class="form-check-input" type="checkbox">Remember Me</label>
-						</div> -->
+						<button id="loginBtn" class="btn btn-bss">Log In</button>
 					</div>
 				</form>
 			</div>
@@ -50,25 +57,62 @@
 
 		<script src="assets/jquery/dist/jquery.min.js"></script>
 		<script>
-			$('#loginForm').submit(function(event){
+			postLogin = function(event){
 				event.preventDefault();
-				let myIP;
-
-				$.getJSON('https://api.ipify.org?format=json', function(data){
-					myIp = data.ip;
-
-					let postData = {
-						'Username': $('#username').val(),
-						'Password': $('#password').val(),
-						'IP': myIp
-					}
-					
-					$.post('https://bss.babaijebu.ng/bss/api/login', postData, function(data){
-						console.log(data);
-						//window.location.href = "/"
+				$('#errorMessage, #successMessage').html("");
+				$('#loginBtn').html("Logging In...").attr('disabled', true);
+				if ($('#username').val() === "" || $('#password').val() === "") {
+					$('#username').val() === "" ? document.getElementById('username').className = "form-control is-invalid" : document.getElementById('username').className = "form-control is-valid";
+					$('#password').val() === "" ? document.getElementById('password').className = "form-control is-invalid" : document.getElementById('password').className = "form-control is-valid";
+				} else {
+					const url = `https://bss.babaijebu.ng/bss/api/login`;
+					$.getJSON('https://api.ipify.org?format=json').then(response => {
+						$.post(url, {
+							Username: $('#username').val(),
+							Password: $('#password').val(),
+							IP: response.ip
+						}, function(){
+							console.log("Sent")
+						}).done(data => {
+							$('#loginBtn').html("Log In").attr('disabled', false);
+							$('#successMessage').html("Login successful. Redirecting...");
+							let agent = {
+								SessionID: data.SessionID,
+								Username: data.Username
+							};
+							localStorage.setItem('agent', JSON.stringify(agent));
+							window.location.href = "/";
+						}).fail(error => {
+							if (error.status == 401){
+								$('#loginBtn').html("Log In").attr('disabled', false);
+								$('#errorMessage').html("Your username or password is incorrect");
+							} else {
+								$('#errorMessage').html("Something went wrong. Please try again");
+							}
+						});
+						
+						// => response.data).then((data) => {
+						// 	console.log(data);
+						// 	$('#loginBtn').html("Log In").attr('disabled', false);
+						// 	$('#successMessage').html("Login successful. Redirecting...");
+						// 	let agent = {
+						// 		SessionID: data.SessionID,
+						// 		Username: data.Username
+						// 	};
+						// 	localStorage.setItem('agent', JSON.stringify(agent));
+						// 	window.location.href = "/";
+						// }).catch(function (error) {
+						// 	if (error.response.status === 401){
+						// 		$('#loginBtn').html("Log In").attr('disabled', false);
+						// 		$('#errorMessage').html("Your username or password is incorrect");
+						// 	}
+						// });
 					});
-				});
-			});
+				}
+			};
+		
+			document.getElementById('loginForm').addEventListener("submit", postLogin);
+			document.getElementById('loginBtn').addEventListener("click", postLogin);
 		</script>
 	</body>
 </html>

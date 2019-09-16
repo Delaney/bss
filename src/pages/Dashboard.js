@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
+import axios from 'axios';
 import $ from 'jquery';
 import * as helpers from 'helpers-of-js';
 
 import styles from './styles/Dashboard.module.css';
 
 class Dashboard extends Component {
-	
-	state = {
-		prog1: Math.floor(Math.random() * 100) + 1,
-		prog2: Math.floor(Math.random() * 100) + 1,
-		prog3: Math.floor(Math.random() * 100) + 1,
-		prog4: Math.floor(Math.random() * 100) + 1,
-		bonus: ''
+
+	constructor(props){
+		super (props)
+
+		this.state = {
+			user: props.user,
+			prog1: Math.floor(Math.random() * 100) + 1,
+			prog2: Math.floor(Math.random() * 100) + 1,
+			prog3: Math.floor(Math.random() * 100) + 1,
+			prog4: Math.floor(Math.random() * 100) + 1,
+			bonus: ''
+		}
 	}
+	
+
+	// componentDidMount(){
+		
+	// 	const url = process.env.REACT_APP_API_URL;
+
+	// 	let req = {
+	// 		SessionID: this.state.user.SessionID
+	// 	}
+
+	// 	axios.post(`${url}/bss`, req, (response => {
+	// 		console.log(response);
+	// 	}));
+	// }
 
 	bonusModal(e) {
 		this.setState({
