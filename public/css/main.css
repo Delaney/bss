@@ -17293,7 +17293,7 @@ a.el-tablo:hover .label {
 
 .auth-box-w .auth-header:after {
 	content: "";
-	background-color: #047bf8;
+	background-color: #c02526;
 	width: 32px;
 	height: 7px;
 	border-radius: 2px;
@@ -17320,7 +17320,7 @@ a.el-tablo:hover .label {
 	position: absolute;
 	bottom: 5px;
 	font-size: 24px;
-	color: #047bf8;
+	color: #c02526;
 	left: -38px;
 }
 
