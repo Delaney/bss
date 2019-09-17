@@ -15,29 +15,6 @@ import RegisterCashierForm from './components/sidebar/RegisterCashierForm';
 import QueryBetSlipForm from './components/sidebar/QueryBetSlipForm';
 import SuspendCashierForm from './components/sidebar/SuspendCashierForm';
 
-// 	render() {
-// 		return (
-// 			<div className="App">
-// 				<header className="">
-// 					<h3>React SPA</h3>
-// 				</header>
-// 				<div className="container">
-// 					{this.state.users.map((user) => (
-// 						<div className="card" key={user.id}>
-// 							<div className="card-body">
-// 								<h5 className="card-title">{user.name}</h5>
-// 								<h6 className="card-subtitle mb-2 text-muted">
-// 									{user.email}             
-// 								</h6>
-// 							</div>
-// 						</div>
-// 					))}
-// 				</div>
-// 			</div>
-// 		)
-// 	}
-// }
-
 class App extends Component {
 
 	constructor(props) {

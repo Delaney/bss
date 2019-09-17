@@ -4,6 +4,8 @@ import axios from 'axios';
 import $ from 'jquery';
 import * as helpers from 'helpers-of-js';
 
+import SuspendedPill from '../components/SuspendedPill';
+
 import styles from './styles/Dashboard.module.css';
 
 class Dashboard extends Component {
@@ -28,7 +30,6 @@ class Dashboard extends Component {
 			cashierList: []
 		}
 	}
-	
 
 	componentDidMount(){
 		this.props.setLoad(true);
@@ -53,15 +54,17 @@ class Dashboard extends Component {
 			this.props.setLoad(false);
 		});
 
-		// axios.post(`${url}/bss`, {SessionID: this.state.user.SessionID, Type: "LIST_OF_CASHIERS"}).then(response => {
-		// 	console.log(response);
-		// 	console.log(response.data);
-		// 	this.setState({
-
-		// 	})
-		// })
+		axios.post(`${url}/bss`, {SessionID: this.state.user.SessionID, Type: "LIST_OF_CASHIERS"}).then(response => {
+			console.log(response);
+			console.log(response.data);
+		})
 	}
 
+	/* * * * * * * * * *
+	 *
+	 * START: METHODS
+	 * 
+	 * * * * * * * * * */
 	bonusModal(e) {
 		this.setState({
 			bonus: e.currentTarget.dataset.bonus
@@ -71,6 +74,30 @@ class Dashboard extends Component {
 	firstLetterUpper(str){
 		return str.split('')[0].toUpperCase() + str.slice(1)
 	}
+
+	formatAmount(s) {
+		var i = parseFloat(s);
+		if (isNaN(i)) { i = 0.00; }
+		var minus = '';
+		if (i < 0) { minus = '-'; }
+		i = Math.abs(i);
+		i = parseInt((i + .005) * 100);
+		i = i / 100;
+		s = new String(i);
+		if (s.indexOf('.') < 0) { s += '.00'; }
+		if (s.indexOf('.') === (s.length - 2)) { s += '0'; }
+		s = minus + s;
+		s = s.replace(/./g, function (c, i, a) {
+			return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
+		});
+		return s;
+	}
+
+	/* * * * * * * * * *
+	 *
+	 * END: METHODS
+	 * 
+	 * * * * * * * * * */
 
 	render() {
 
@@ -170,7 +197,7 @@ class Dashboard extends Component {
 															</div>
 															<div className="value font-weight-bold">
 																{/* ₦45,201,964 */}
-																₦{this.state.dueDebt == null ? 0 : this.state.dueDebt}
+																₦{this.state.dueDebt == null ? '0.00' : this.formatAmount(this.state.dueDebt)}
 															</div>
 														</div>
 														
@@ -184,7 +211,7 @@ class Dashboard extends Component {
 															</div>
 															<div className="value font-weight-light">
 																{/* ₦130,391,955 */}
-																₦{this.state.currentDebt == null ? 0 : this.state.currentDebt}
+																₦{this.state.currentDebt == null ? '0.00' : this.formatAmount(this.state.currentDebt)}
 															</div>
 															<div className="trending trending-up">
 																<span>12%</span>
@@ -219,7 +246,7 @@ class Dashboard extends Component {
 															</div>
 															<div className="value font-weight-bold">
 																{/* ₦4,539,200 */}
-																₦{this.state.commissionBalance == null ? 0 : this.state.commissionBalance}
+																₦{this.state.commissionBalance == null ? '0.00' : this.formatAmount(this.state.commissionBalance)}
 															</div>
 														</div>
 
@@ -233,7 +260,7 @@ class Dashboard extends Component {
 															</div>
 															<div className="value font-weight-light">
 																{/* ₦171,955 */}
-																₦{this.state.commissionThisWeek == null ? 0 : this.state.commissionThisWeek}
+																₦{this.state.commissionThisWeek == null ? '0.00' : this.formatAmount(this.state.commissionThisWeek)}
 															</div>
 															<div className="trending trending-down">
 																<span>12%</span>
@@ -266,7 +293,7 @@ class Dashboard extends Component {
 															</div>
 															<div className="value font-weight-bold">
 																{/* ₦39,200 */}
-																₦{this.state.cashierDebt == null ? 0 : this.state.dueDebt}
+																₦{this.state.cashierDebt == null ? '0.00' : this.formatAmount(this.state.dueDebt)}
 															</div>
 														</div>
 
@@ -364,7 +391,7 @@ class Dashboard extends Component {
 																	₦245
 																</td>
 																<td className="text-center">
-																	<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
+																	<SuspendedPill status={cashier.SUSPEND_SUB_AGENT} />
 																</td>
 																<td className="row-actions">
 																	<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
