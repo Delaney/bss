@@ -39,14 +39,23 @@ import SuspendCashierForm from './components/sidebar/SuspendCashierForm';
 // }
 
 class App extends Component {
-	
-	state = {
-		user: JSON.parse(localStorage.getItem('agent')),
-		stat: Math.floor(Math.random() * 100) % 2
-	}
 
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			user: localStorage.getItem('agent') ? JSON.parse(localStorage.getItem('agent')) : {Username: '', SessionID: '', AgentNo: ''},
+			stat: Math.floor(Math.random() * 100) % 2
+		}
+
+		this.logout = this.logout.bind(this);
+	}
 	
 	componentDidMount(){
+		if (!localStorage.getItem('agent')){
+			window.location.href="/login.html";
+		}
+
 		$(function(){
 			$(".fpl-progress-i").each(function() {
 				let width = $(this).css('width');
@@ -63,7 +72,10 @@ class App extends Component {
 
 	logout(){
 		localStorage.removeItem('agent');
-		this.setState();
+		this.setState({
+			user: {Username: '', SessionID: '', AgentNo: ''}
+		});
+		window.location.href = "/login.html";
 	}
 
 	loading(val){
@@ -71,7 +83,6 @@ class App extends Component {
 	}
 
 	render() {
-		const username = this.state.user.Username;
 		return (
 			<div className="all-wrapper with-side-panel solid-bg-all">
 				<div id="loading_page">
@@ -105,11 +116,11 @@ class App extends Component {
 								</div>
 								<div className="logged-user-info-w">
 									<div className="logged-user-name">
-										{username}
+										{this.state.user.Username}
 									</div>
-									{/* <div className="logged-user-role">
-										Administrator
-									</div> */}
+									<div className="logged-user-role">
+										{this.state.user.AgentNo}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -136,7 +147,7 @@ class App extends Component {
 									</div>
 									<div className="fs-main-info">
 										<div className="fs-name">
-											<span>Providus</span>
+											<span>WEMA</span>
 											{/* <strong>BTC</strong> */}
 										</div>
 										<div className="fs-sub">
@@ -154,7 +165,8 @@ class App extends Component {
 										</div>
 										<div className="fs-main-info">
 											<div className="fs-name">
-												<span>Lite Portfolio</span><strong>ETH</strong>
+												<span>Heritage</span>
+												{/* <strong>ETH</strong> */}
 											</div>
 											<div className="fs-sub">
 												<span>Wallet Balance:</span><strong>₦5,304</strong>
@@ -235,11 +247,11 @@ class App extends Component {
 												</div>
 												<div className="logged-user-info-w">
 													<div className="logged-user-name">
-														{username}
+														{this.state.user.Username}
 													</div>
-													{/* <div className="logged-user-role">
-														Administrator
-													</div> */}
+													<div className="logged-user-role">
+														{this.state.user.AgentNo}
+													</div>
 												</div>
 											</div>
 											<div className="bg-icon">
@@ -296,7 +308,7 @@ class App extends Component {
 										<Route
 											exact path="/"
 											render={(props) =>
-												localStorage.getItem('agent') ? <Dashboard {...props} setLoad={this.loading} user={JSON.parse(localStorage.getItem('agent'))}/> : window.location.href="/login.html" } />
+												<Dashboard {...props} setLoad={this.loading} user={JSON.parse(localStorage.getItem('agent'))}/>} />
 										} />
 									</Switch>
 								</BrowserRouter>

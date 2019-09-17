@@ -39,11 +39,27 @@ class Dashboard extends Component {
 			Type: "ALL"
 		}
 
-		axios.post(`${url}/bss`, req).then(response => {
+		axios.post(`${url}/all`, req).then(response => {
 			console.log(response.data);
-			console.log(response.data.filter(obj => obj.NAME === "NO_OF_CASHIER")[0].VALUE);
+			this.setState({
+				currentDebt: response.data.Table.filter(obj => obj.NAME === "CURRENT_DEBT")[0].VALUE,
+				dueDebt: response.data.Table.filter(obj => obj.NAME === "DUE_DEBT")[0].VALUE,
+				commissionBalance: response.data.Table.filter(obj => obj.NAME === "COMMISSION_BALANCE")[0].VALUE,
+				commissionThisWeek: response.data.Table.filter(obj => obj.NAME === "COMMISSION_THIS_WEEK")[0].VALUE,
+				cashierDebt: response.data.Table.filter(obj => obj.NAME === "CASHIER_DEBT")[0].VALUE,
+				cashierNo: response.data.Table.filter(obj => obj.NAME === "NO_OF_CASHIER")[0].VALUE,
+				cashierList: response.data.Table1
+			});
 			this.props.setLoad(false);
 		});
+
+		// axios.post(`${url}/bss`, {SessionID: this.state.user.SessionID, Type: "LIST_OF_CASHIERS"}).then(response => {
+		// 	console.log(response);
+		// 	console.log(response.data);
+		// 	this.setState({
+
+		// 	})
+		// })
 	}
 
 	bonusModal(e) {
@@ -51,6 +67,10 @@ class Dashboard extends Component {
 			bonus: e.currentTarget.dataset.bonus
 		});
 	};
+
+	firstLetterUpper(str){
+		return str.split('')[0].toUpperCase() + str.slice(1)
+	}
 
 	render() {
 
@@ -149,7 +169,8 @@ class Dashboard extends Component {
 																Due Debt
 															</div>
 															<div className="value font-weight-bold">
-																₦45,201,964
+																{/* ₦45,201,964 */}
+																₦{this.state.dueDebt == null ? 0 : this.state.dueDebt}
 															</div>
 														</div>
 														
@@ -162,7 +183,8 @@ class Dashboard extends Component {
 																Total Debt
 															</div>
 															<div className="value font-weight-light">
-																₦130,391,955
+																{/* ₦130,391,955 */}
+																₦{this.state.currentDebt == null ? 0 : this.state.currentDebt}
 															</div>
 															<div className="trending trending-up">
 																<span>12%</span>
@@ -196,7 +218,8 @@ class Dashboard extends Component {
 																Commission Balance
 															</div>
 															<div className="value font-weight-bold">
-																₦4,539,200
+																{/* ₦4,539,200 */}
+																₦{this.state.commissionBalance == null ? 0 : this.state.commissionBalance}
 															</div>
 														</div>
 
@@ -209,7 +232,8 @@ class Dashboard extends Component {
 																This Week
 															</div>
 															<div className="value font-weight-light">
-																₦171,955
+																{/* ₦171,955 */}
+																₦{this.state.commissionThisWeek == null ? 0 : this.state.commissionThisWeek}
 															</div>
 															<div className="trending trending-down">
 																<span>12%</span>
@@ -241,7 +265,8 @@ class Dashboard extends Component {
 																Debt
 															</div>
 															<div className="value font-weight-bold">
-																₦39,200
+																{/* ₦39,200 */}
+																₦{this.state.cashierDebt == null ? 0 : this.state.dueDebt}
 															</div>
 														</div>
 
@@ -254,7 +279,7 @@ class Dashboard extends Component {
 																Active
 															</div>
 															<div className="value font-weight-light">
-																11
+																{this.state.cashierNo}
 															</div>
 															<div className="trending trending-same">
 																<span>0%</span>
@@ -327,97 +352,119 @@ class Dashboard extends Component {
 														</tr>
 													</thead>
 													<tbody>
-														<tr>
-															<td className="text-center">
-																<input className="form-control" type="checkbox" />
-															</td>
-															<td className="text-center">
-																John Mayers
-															</td>
-															<td className="text-right">
-																₦245
-															</td>
-															<td className="text-center">
-																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
-															</td>
-															<td className="row-actions">
-																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																<input className="form-control" type="checkbox" />
-															</td>
-															<td className="text-center">
-																John Mayers
-															</td>
-															<td className="text-right">
-																₦245
-															</td>
-															<td className="text-center">
-																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
-															</td>
-															<td className="row-actions">
-																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																<input className="form-control" type="checkbox" />
-															</td>
-															<td className="text-center">
-																John Mayers
-															</td>
-															<td className="text-right">
-																₦245
-															</td>
-															<td className="text-center">
-																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
-															</td>
-															<td className="row-actions">
-																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																<input className="form-control" type="checkbox" />
-															</td>
-															<td className="text-center">
-																John Mayers
-															</td>
-															<td className="text-right">
-																₦245
-															</td>
-															<td className="text-center">
-																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
-															</td>
-															<td className="row-actions">
-																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
-															</td>
-														</tr>
-														<tr>
-															<td className="text-center">
-																<input className="form-control" type="checkbox" />
-															</td>
-															<td className="text-center">
-																John Mayers
-															</td>
-															<td className="text-right">
-																₦245
-															</td>
-															<td className="text-center">
-																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
-															</td>
-															<td className="row-actions">
-																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
-																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
-															</td>
-														</tr>
+														{this.state.cashierList.map((cashier) => (
+															<tr key={cashier.SUB_AGENT_NUMBER}>
+																<td className="text-center">
+																	<input className="form-control" type="checkbox" />
+																</td>
+																<td className="text-center">
+																	{this.firstLetterUpper(cashier.SUB_AGENT_FIRST_NAME)} {this.firstLetterUpper(cashier.SUB_AGENT_LAST_NAME)}
+																</td>
+																<td className="text-right">
+																	₦245
+																</td>
+																<td className="text-center">
+																	<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
+																</td>
+																<td className="row-actions">
+																	<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
+																	<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+																</td>
+															</tr>
+														))}
 													</tbody>
+													{/* <tbody>
+														<tr>
+															<td className="text-center">
+																<input className="form-control" type="checkbox" />
+															</td>
+															<td className="text-center">
+																John Mayers
+															</td>
+															<td className="text-right">
+																₦245
+															</td>
+															<td className="text-center">
+																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
+															</td>
+															<td className="row-actions">
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td className="text-center">
+																<input className="form-control" type="checkbox" />
+															</td>
+															<td className="text-center">
+																John Mayers
+															</td>
+															<td className="text-right">
+																₦245
+															</td>
+															<td className="text-center">
+																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
+															</td>
+															<td className="row-actions">
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td className="text-center">
+																<input className="form-control" type="checkbox" />
+															</td>
+															<td className="text-center">
+																John Mayers
+															</td>
+															<td className="text-right">
+																₦245
+															</td>
+															<td className="text-center">
+																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
+															</td>
+															<td className="row-actions">
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td className="text-center">
+																<input className="form-control" type="checkbox" />
+															</td>
+															<td className="text-center">
+																John Mayers
+															</td>
+															<td className="text-right">
+																₦245
+															</td>
+															<td className="text-center">
+																<div className="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
+															</td>
+															<td className="row-actions">
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td className="text-center">
+																<input className="form-control" type="checkbox" />
+															</td>
+															<td className="text-center">
+																John Mayers
+															</td>
+															<td className="text-right">
+																₦245
+															</td>
+															<td className="text-center">
+																<div className="status-pill red" data-title="Cancelled" data-toggle="tooltip"></div>
+															</td>
+															<td className="row-actions">
+																<a className="no-link-effect" href="# "data-target="#onboardingFormModal" data-toggle="modal"><i className="os-icon os-icon-wallet-loaded"></i></a>
+																<a className="no-link-effect danger" href="# "><i className="os-icon os-icon-cancel-circle"></i></a>
+															</td>
+														</tr>
+													</tbody> */}
 												</table>
 											</div>
 											{/* <!--------------------
@@ -537,7 +584,7 @@ class Dashboard extends Component {
 																	<span className={progressBarRight}></span>
 																</span>
 																<div className={progressValueClass}>
-																	<div className="h4 font-weight-bold">{this.state.prog1}<sup className="smaller">%</sup></div>
+																	<div className="h4 font-weight-bold">{this.state.prog1}<sup className="">%</sup></div>
 																</div>
 															</div>
 														</div>
@@ -570,7 +617,7 @@ class Dashboard extends Component {
 																	<span className={progressBarRight}></span>
 																</span>
 																<div className={progressValueClass}>
-																	<div className="h4 font-weight-bold">{this.state.prog2}<sup className="smaller">%</sup></div>
+																	<div className="h4 font-weight-bold">{this.state.prog2}<sup className="">%</sup></div>
 																</div>
 															</div>
 														</div>
@@ -603,7 +650,7 @@ class Dashboard extends Component {
 																	<span className={progressBarRight}></span>
 																</span>
 																<div className={progressValueClass}>
-																	<div className="h4 font-weight-bold">100<sup className="smaller">%</sup></div>
+																	<div className="h4 font-weight-bold">100<sup className="">%</sup></div>
 																</div>
 															</div>
 														</div>

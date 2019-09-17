@@ -479,7 +479,7 @@ a.color-bss:hover {
 }
 
 .smaller {
-	font-size: 60%;
+	font-size: 80%;
     font-weight: 300;
     vertical-align: super;
 }
@@ -512,7 +512,7 @@ a.color-bss:hover {
 #loading_page > div {
 	position: absolute;
     margin: auto;
-    top: 50%;
+    top: 30%;
     left: 40%;
 }
 
@@ -705,6 +705,14 @@ a.color-bss:hover {
 
 	.top-bar .logged-user-w {
 		padding: 0px 0.5rem;
+	}
+
+	#loading_page > div {
+		left: 25%;
+	}
+
+	#loading_page img {
+		width: 200px;
 	}
 }
 

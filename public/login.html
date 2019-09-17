@@ -78,7 +78,8 @@
 							$('#successMessage').html("Login successful. Redirecting...");
 							let agent = {
 								SessionID: data.SessionID,
-								Username: data.Username
+								Username: data.Username,
+								AgentNo: data.Agent_Number
 							};
 							localStorage.setItem('agent', JSON.stringify(agent));
 							window.location.href = "/";
