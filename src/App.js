@@ -120,7 +120,7 @@ class App extends Component {
 							<div className="fancy-selector-w">
 								<div className="fancy-selector-current">
 									<div className="fs-img">
-										<img alt="" src="img/card4.png"/>
+										<img alt="" src="img/wema-bank-logo.png"/>
 									</div>
 									<div className="fs-main-info">
 										<div className="fs-name">
