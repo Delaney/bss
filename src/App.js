@@ -21,8 +21,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			user: localStorage.getItem('agent') ? JSON.parse(localStorage.getItem('agent')) : {Username: '', SessionID: '', AgentNo: ''},
-			stat: Math.floor(Math.random() * 100) % 2
+			user: localStorage.getItem('agent') ? JSON.parse(localStorage.getItem('agent')) : {Username: '', SessionID: '', AgentNo: '', Blocked: ''},
 		}
 
 		this.logout = this.logout.bind(this);
@@ -50,7 +49,7 @@ class App extends Component {
 	logout(){
 		localStorage.removeItem('agent');
 		this.setState({
-			user: {Username: '', SessionID: '', AgentNo: ''}
+			user: {Username: '', SessionID: '', AgentNo: '', Blocked: ''}
 		});
 		window.location.href = "/login.html";
 	}
@@ -178,7 +177,7 @@ class App extends Component {
 									<input placeholder="Start typing to search..." type="text"/>
 								</div> */}
 
-								<StatusInTopbar status={this.state.stat}></StatusInTopbar>
+								<StatusInTopbar status={this.state.user.Blocked}></StatusInTopbar>
 								
 								{/* <!--------------------
 								START - Settings Link in secondary top menu

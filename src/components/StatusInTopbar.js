@@ -13,7 +13,7 @@ class StatusInTopbar extends Component {
 		const status = this.state.active;
 		let clss = {};
 
-		if (status){
+		if (!status){
 			clss = {
 				class: 'status-pill green hvr-pulse',
 				status: 'Active'

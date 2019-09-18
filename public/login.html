@@ -79,7 +79,8 @@
 							let agent = {
 								SessionID: data.SessionID,
 								Username: data.Username,
-								AgentNo: data.Agent_Number
+								AgentNo: data.Agent_Number,
+								Blocked: data.Blocked
 							};
 							localStorage.setItem('agent', JSON.stringify(agent));
 							window.location.href = "/";
