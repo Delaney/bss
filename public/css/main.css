@@ -486,11 +486,12 @@ a.color-bss:hover {
 
 /* END: HELPERS */
 
-#loading_page, #loading_page.on {
+#loading_page, #loading_page.on,
+#soa_loading_page, #soa_loading_page.on {
 	transition: all 0.3s linear;
 }
 
-#loading_page {
+#loading_page, #soa_loading_page {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -504,16 +505,24 @@ a.color-bss:hover {
 	opacity: 0;
 }
 
-#loading_page.on {
+#loading_page.on, #soa_loading_page.on {
 	visibility: visible;
 	opacity: 1;
 }
 
-#loading_page > div {
+#loading_page > div, #soa_loading_page > div {
 	position: absolute;
     margin: auto;
     top: 30%;
     left: 40%;
+}
+
+#soa_loading_page > div {
+	left: 30% !important;
+}
+
+#soa_loading_page {
+	min-height: 500px;
 }
 
 .bonus-table {
@@ -559,6 +568,10 @@ a.color-bss:hover {
 
 .projects-list .project-head .project-title {
 	margin: 0 auto;
+}
+
+.bss-list .project-box {
+	cursor: pointer;
 }
 
 .bss-panel .element-wrapper {
@@ -610,6 +623,10 @@ a.color-bss:hover {
 	right: -10px;
 	display: block;
 	overflow: hidden;
+}
+
+.soa-modal {
+	max-width: 1200px !important;
 }
 
 .element-wrapper .element-actions .element-action {
@@ -707,12 +724,21 @@ a.color-bss:hover {
 		padding: 0px 0.5rem;
 	}
 
+	#soa_loading_page > div,
 	#loading_page > div {
 		left: 25%;
 	}
 
 	#loading_page img {
 		width: 200px;
+	}
+
+	#soa_loading_page img {
+		width: 150px;
+	}
+
+	#soa_table {
+		font-size: 0.85em;
 	}
 }
 

@@ -27,20 +27,20 @@ class Dashboard extends Component {
 			commissionBalance: '',
 			cashierDebt: '',
 			cashierNo: '',
-			cashierList: []
+			cashierList: [],
+			url: process.env.REACT_APP_API_URL
 		}
 	}
 
 	componentDidMount(){
 		this.props.setLoad(true);
-		const url = process.env.REACT_APP_API_URL;
 
 		let req = {
 			SessionID: this.state.user.SessionID,
 			Type: "ALL"
 		}
 
-		axios.post(`${url}/all`, req).then(response => {
+		axios.post(`${this.state.url}/all`, req).then(response => {
 			// console.log(response.data);
 			this.setState({
 				currentDebt: response.data.Table.filter(obj => obj.NAME === "CURRENT_DEBT")[0].VALUE,
@@ -54,10 +54,15 @@ class Dashboard extends Component {
 			this.props.setLoad(false);
 		});
 
-		axios.post(`${url}/bss`, {SessionID: this.state.user.SessionID, Type: "LIST_OF_CASHIERS"}).then(response => {
-			console.log(response);
-			console.log(response.data);
-		})
+		// axios.post(`${url}/bss`, {SessionID: this.state.user.SessionID, Type: "LIST_OF_CASHIERS"}).then(response => {
+		// 	console.log(response);
+		// 	console.log(response.data);
+		// })
+
+		// axios.post(`${url}/feed`, {SessionID: this.state.user.SessionID}).then(response => {
+		// 	console.log(response);
+		// 	console.log(response.data);
+		// })
 	}
 
 	/* * * * * * * * * *
@@ -92,6 +97,65 @@ class Dashboard extends Component {
 			return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
 		});
 		return s;
+	}
+
+	loading(val){
+		document.getElementById('soa_loading_page').className = val ? "on" : "";
+	}
+
+	showSOA(type){
+		this.loading(true);
+		axios.post(`${this.state.url}/feed`, {SessionID: this.state.user.SessionID, Type: type}).then(response => {
+			console.log(response);
+			console.log(response.data);
+			const tables = response.data.Table3;
+
+			$('#soa_title').html(response.data.Table1[0].REPORT_TITLE);
+			let tableHeader = `
+				<tr>
+					<th>Date</th>
+					<th>Op. Bal</th>
+					<th>Lotto Sales</th>
+					<th>Sports Bet</th>
+					<th>Virtual Sales</th>
+					<th>Total Sales</th>
+					<th>Winnings</th>
+					<th>Comm. Applied</th>
+					<th>Refund</th>
+					<th>Cash</th>
+					<th>Reversal</th>
+					<th>Cl. Bal</th>
+				</tr>
+			`;
+
+			for (const table of tables) {
+				tableHeader += `
+					<tr>
+						<td>${table.DATE}</td>
+						<td class="text-right">₦${table.OPENING_BALANCE}</td>
+						<td class="text-right">₦${table.VIRTUAL_LOTTO_SALES}</td>
+						<td class="text-right">₦${table.SPORTS_BOOK_SALES}</td>
+						<td class="text-right">₦${table.VIRTUAL_SALES}</td>
+						<td class="text-right">₦${table.NET_SALES}</td>
+						<td class="text-right">₦${table.WINNINGS_PAYMENT}</td>
+						<td class="text-right">₦${table.VIRTUAL_LOTTO_SALES_COMMISSION + table.SPORTS_BOOK_SALES_COMMISSION + table.VIRTUAL_SALES_COMMISSION}</td>
+						<td class="text-right">₦${table.CASH_REFUND}</td>
+						<td class="text-right">₦${table.CASH_RECEIPT}</td>
+						<td class="text-right">₦${table.CASH_REVERSAL}</td>
+						<td class="text-right">₦${table.CLOSING_BALANCE}</td>
+					</tr>
+				`;
+			}
+
+			$('#soa_table tbody').html(tableHeader);
+
+			this.loading(false);
+		}).catch(function (error) {
+			console.log(error);
+			console.log("Is Not Work");
+			$('#soa_table tbody').html("<h3 class='text-center'>Something went wrong. Please try again.</h3>");
+			this.loading(false);
+		});
 	}
 
 	/* * * * * * * * * *
@@ -180,7 +244,7 @@ class Dashboard extends Component {
 							<div className="row">
 								<div className="col-12 col-sm-4 col-xxl-4">
 									<div className="projects-list bss-list text-center">
-										<div className="project-box">
+										<div className="project-box" onClick={() => this.showSOA("DEBT")} data-target="#soaModal" data-toggle="modal" data-bonus="DEBT">
 											<div className="project-head">
 												<div className="project-title">
 													<h5>
@@ -294,7 +358,7 @@ class Dashboard extends Component {
 															</div>
 															<div className="value font-weight-bold">
 																{/* ₦39,200 */}
-																₦{this.state.cashierDebt == null ? '0.00' : this.formatAmount(this.state.dueDebt)}
+																₦{this.state.cashierDebt == null ? '0.00' : this.formatAmount(this.state.cashierDebt)}
 															</div>
 														</div>
 
@@ -472,6 +536,58 @@ class Dashboard extends Component {
 								</div>
 							</div>							
 
+							{/* <!--------------------
+							START - Statement of Account Modal
+							---------------------> */}										
+							<div aria-hidden="true" className="onboarding-modal modal fade" id="soaModal" role="dialog" tabIndex="-1">
+								<div className="modal-dialog modal-centered modal-lg soa-modal" role="document">
+									<div className="modal-content text-center">
+										<button aria-label="Close" className="close" data-dismiss="modal" type="button">
+											<span className="os-icon os-icon-close"></span>
+										</button>
+										<div id="soa_loading_page">
+											<div>
+												<img className="hvr-pulse" src="img/premier-bet-logo-small.png" alt=""/>
+												<div className="gap-2"></div>
+												<h2>Loading...</h2>
+											</div>
+										</div>
+										<div className="onboarding-content with-gradient">
+											<h4 className="onboarding-title" id="soa_title">TITLE</h4>
+											<div className="row">
+												<div className="col-12">
+													
+													<div className="element-wrapper w-100">
+														<div className="element-box-tp">
+
+															<div className="row">
+																<div className="col-12">
+																	{/* <!--------------------
+																	START - Statement of Account Table
+																	---------------------> */}
+																	<div className="table-responsive">
+																		<table className="table table-lg table-v2 table-striped table-bordered" id="soa_table">
+																			<thead></thead>
+																			<tbody></tbody>
+																		</table>
+																	</div>
+																	{/* <!--------------------
+																	END - Statement of Account table
+																	---------------------> */}
+																</div>
+															</div>
+													
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{/* <!--------------------
+							END - Statement of Account Modal
+							---------------------> */}
 						</div>
 						{/* <!--------------------
 						END - Summary Tab
