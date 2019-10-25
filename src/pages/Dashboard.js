@@ -28,7 +28,7 @@ class Dashboard extends Component {
 			cashierDebt: '',
 			cashierNo: '',
 			cashierList: [],
-			url: process.env.REACT_APP_API_URL
+			url: 'https://bss.babaijebu.ng/bss/api'
 		}
 	}
 
